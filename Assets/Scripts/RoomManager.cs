@@ -93,26 +93,18 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 Debug.Log("Joined room with the map: " + (string)mapType);
                 if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_AULA_1)
                 {
-                    //Load the School scene
                     PhotonNetwork.LoadLevel("Aula 1");
-
                 }
                 else if ((string)mapType == MultiplayerVRConstants.MAP_TYPE_VALUE_BIBLIOTECA)
                 {
-                    //Load the Outdoor Scene
                     PhotonNetwork.LoadLevel("Biblioteca");
-
                 }
             }
         }
-
-
-
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-
         Debug.Log(newPlayer.NickName + " joined to:" + "Player Count: " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
@@ -142,14 +134,12 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
                 OccupancyRateText_For_Aula_1.text = room.PlayerCount + " / " + 20;
             }
-
         }
     }
 
 
     public override void OnJoinedLobby()
     {
-
         Debug.Log("Joined to Lobby");
     }
 
