@@ -2747,7 +2747,7 @@ PrefabInstance:
     - target: {fileID: 2169293946195944356, guid: f8308189b56752348b8eeac169664593, type: 3}
       propertyPath: xRRigToFollow
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1613566667}
     - target: {fileID: 2169293946195944358, guid: f8308189b56752348b8eeac169664593, type: 3}
       propertyPath: m_Name
       value: VRSimulator
@@ -2802,6 +2802,11 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224731748280975884, guid: 06965b25196f8b44fbba5418dbfb9973, type: 3}
   m_PrefabInstance: {fileID: 304225601}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1613566667 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3644642798523138058, guid: c3a6df4a12b151443895f6b5036bcd93, type: 3}
+  m_PrefabInstance: {fileID: 411455110}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1739285784
 GameObject:

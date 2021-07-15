@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.thrashpanda.vr.simulator": {
-      "version": "file:C:\\Users\\yordy\\Desktop\\Materiales\\Cursos\\Unity\\Fetus Demo\\Assets\\VRSimulator\\com.thrashpanda.vr.simulator-2.0.4.tgz",
+      "version": "file:D:\\Dev\\3DCloud\\Assets\\VRSimulator\\com.thrashpanda.vr.simulator-2.0.4.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
