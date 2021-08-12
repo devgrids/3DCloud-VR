@@ -44,6 +44,13 @@ MonoBehaviour:
   - HeresWhy
   - NextContentPun
   - Destruir
+  - PunForceGrab
+  - PunHandGrab
+  - PunOnAngleChanged
+  - PunOnGrabberReleased
+  - PunOnStepChanged
+  - PunPhysicsHandGrab
+  - PunSocketGrab
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

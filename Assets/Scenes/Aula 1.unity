@@ -2461,7 +2461,7 @@ PrefabInstance:
     - target: {fileID: 2046368380148305407, guid: 41f3cd4fd531c5543a2619b49f08bc9f, type: 3}
       propertyPath: genericPlayer
       value: 
-      objectReference: {fileID: 4527690330870346660, guid: 5524a343454b20846b7a94564d1a5ea1, type: 3}
+      objectReference: {fileID: 6852573858411964125, guid: 7f72d0c5ff6e6cc4b92f27a50d199c57, type: 3}
     - target: {fileID: 2046368380148305407, guid: 41f3cd4fd531c5543a2619b49f08bc9f, type: 3}
       propertyPath: spawnPlayer.x
       value: -3
@@ -13812,10 +13812,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca683f7068fef94391678673aaaad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovementConfiguration: {fileID: 0}
-  playerCameraConfiguration: {fileID: 0}
-  playerCrosshairConfiguration: {fileID: 0}
-  playerJumpConfiguration: {fileID: 0}
+  _camera: {fileID: 0}
+  _hvrPlayerController: {fileID: 0}
+  _trackedPoseDriver_Left: {fileID: 0}
+  _trackedPoseDriver_Right: {fileID: 0}
 --- !u!114 &2599765615844936618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23408,10 +23408,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca683f7068fef94391678673aaaad99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovementConfiguration: {fileID: 0}
-  playerCameraConfiguration: {fileID: 0}
-  playerCrosshairConfiguration: {fileID: 0}
-  playerJumpConfiguration: {fileID: 0}
+  _camera: {fileID: 0}
+  _hvrPlayerController: {fileID: 0}
+  _trackedPoseDriver_Left: {fileID: 0}
+  _trackedPoseDriver_Right: {fileID: 0}
 --- !u!114 &7579140676313702315
 MonoBehaviour:
   m_ObjectHideFlags: 0

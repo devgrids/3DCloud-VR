@@ -1,5 +1,6 @@
 {
     "name": "HurricaneVR.PUN",
+    "rootNamespace": "",
     "references": [
         "HurricaneVR.Framework",
         "Hurricane.Shared",
@@ -14,9 +15,7 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": false,
-    "defineConstraints": [
-        "HVR_PUN"
-    ],
+    "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
 }

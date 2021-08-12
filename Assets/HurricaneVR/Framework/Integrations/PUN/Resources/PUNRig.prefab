@@ -63,16 +63,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4323905988960148720}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4323905988960148720}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6924193544356309387}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &6041580127791879
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +371,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -392,6 +396,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &161784548605449449
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +452,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -471,6 +477,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &161784550021659364
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +913,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -930,6 +938,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &4507555201686720432
 Animator:
   serializedVersion: 3
@@ -1045,16 +1054,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4323905988960148720}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4323905988960148720}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6924193544356309387}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &466740145386282879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1236,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 2e3aae4fb1f4b0a4298c43e6312a405a, type: 2}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1369,6 +1382,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!225 &1752966116747940799
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1652,6 +1666,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1676,6 +1691,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &932944103695181653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +1816,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2581,6 +2598,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2605,6 +2623,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1157973208355447720
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2690,8 +2709,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandFist'
@@ -2699,12 +2721,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 0
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -2923,16 +2955,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 0}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 0}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6078592854270688070}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &1737978034568985625
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,6 +3059,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -3032,13 +3070,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -3049,6 +3087,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -3126,11 +3169,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1761532886354220381
@@ -3191,6 +3234,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -3199,13 +3245,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -3216,6 +3262,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -3293,11 +3344,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1773515981325661734
@@ -3357,11 +3408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9592152fa64433fa0a6766a74007789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hvrSortMode: 0
-  ValidSockets: []
-  ClosestSocket: {fileID: 0}
   Grabber: {fileID: 161784548790661568}
   MaxDistanceAllowed: 0
+  hvrSortMode: 0
+  IgnoredSockets: []
+  ClosestSocket: {fileID: 0}
+  ValidSockets: []
 --- !u!1 &1805013467197532069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3419,6 +3471,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -3427,13 +3482,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -3444,6 +3499,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 0
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -3506,11 +3566,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &1827075618467856367
@@ -3592,6 +3652,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &1955492589862985835
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3700,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3855,6 +3917,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3879,6 +3942,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2000386083963333832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,6 +4181,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4141,6 +4206,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2160590422112781350
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,6 +4992,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6144,8 +6211,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 1
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 2331106897474779309}
   ThumbTip: {fileID: 7321014044496014735}
   IndexRoot: {fileID: 2331106896577373342}
@@ -6214,27 +6286,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afd8501793f4c08903068b0bdc79809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Iterations: 100
+  RaysPerBone: 3
+  SphereRadius: 0.007
+  FingerTipOnly: 0
   Hand: {fileID: 6316656103036165762}
   OpenPose: {fileID: 11400000, guid: 73d3bd0553ee13543b2c0a0f7ff2b7ef, type: 2}
   ClosedPose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
   Palm: {fileID: 6749080714084135622}
-  RaysPerBone: 3
-  SphereRadius: 0.007
   DrawSpheres: 1
   DrawTips: 1
-  MaxFingerBend: 1
-  CollisionPoints: []
-  CurrentIteration: 0
-  FingerBends: 0000000000000000000000000000000000000000
+  DrawCollisionPoints: 0
+  LogHitColliderNames: 0
   _fingerIndex: 0
-  _currentFinger:
-    Root: {fileID: 0}
-    Tip: {fileID: 0}
-    Bones: []
-  Iterations: 100
   CurrentMask:
     serializedVersion: 2
     m_Bits: 0
+  _collidedBoneTracker: 
+  _fingerIndices: 
+  LiveUpdate: 0
+  FingerBends: 0000000000000000000000000000000000000000
 --- !u!114 &4698744933169978639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6247,27 +6318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 6316656103036165762}
   DefaultPoser: {fileID: 8531560809075290662}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!114 &8531560809075290662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6282,8 +6338,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 1
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -6293,31 +6352,61 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends:
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 59
-    Disabled: 0
     Type: 3
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 4
-    Disabled: 0
     Type: 2
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 1
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
 --- !u!1 &2331106897667819753
@@ -6629,11 +6718,13 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 0
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 8549851308428609550}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 8549851308428609550}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 0
+  _allGrabbables: []
   UseColliderDistance: 1
 --- !u!135 &4694535717918717225
 SphereCollider:
@@ -6912,6 +7003,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7696,8 +7788,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 1
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 2373128896294320470}
   ThumbTip: {fileID: 7291250878503234676}
   IndexRoot: {fileID: 2373128895111177573}
@@ -7766,27 +7863,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 6277886167016939385}
   DefaultPoser: {fileID: 8561620164858590173}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!114 &8561620164858590173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7801,8 +7883,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 1
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -7812,31 +7897,61 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends:
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 59
-    Disabled: 0
     Type: 3
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 4
-    Disabled: 0
     Type: 2
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 1
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
 --- !u!114 &987146623837364402
@@ -8972,6 +9087,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9114,8 +9230,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 0
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 4156382790913209700}
   ThumbTip: {fileID: 6646777017356602759}
   IndexRoot: {fileID: 18992091817141916}
@@ -9184,30 +9305,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0afd8501793f4c08903068b0bdc79809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Iterations: 100
+  RaysPerBone: 3
+  SphereRadius: 0.007
+  FingerTipOnly: 0
   Hand: {fileID: 4355960557136256841}
   OpenPose: {fileID: 11400000, guid: 73d3bd0553ee13543b2c0a0f7ff2b7ef, type: 2}
   ClosedPose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
   Palm: {fileID: 6306414117045365798}
-  RaysPerBone: 3
-  SphereRadius: 0.007
   DrawSpheres: 0
   DrawTips: 0
-  MaxFingerBend: 1
-  CollisionPoints: []
-  CurrentIteration: 0
-  FingerBends: 0000000000000000000000000000000000000000
+  DrawCollisionPoints: 0
+  LogHitColliderNames: 0
   _fingerIndex: 0
-  _currentFinger:
-    Root: {fileID: 4156382790913209700}
-    Tip: {fileID: 6646777017356602759}
-    Bones:
-    - Transform: {fileID: 4156382790913209700}
-    - Transform: {fileID: 1065900372281558834}
-    - Transform: {fileID: 4593981657546522496}
-  Iterations: 100
   CurrentMask:
     serializedVersion: 2
     m_Bits: 4292870143
+  _collidedBoneTracker: 
+  _fingerIndices: 
+  LiveUpdate: 0
+  FingerBends: 0000000000000000000000000000000000000000
 --- !u!114 &3633517355667807844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9222,8 +9339,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 2
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -9233,31 +9353,61 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends:
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 59
-    Disabled: 0
     Type: 3
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 4
-    Disabled: 0
     Type: 2
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 1
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
 --- !u!114 &1917170791366586117
@@ -9272,27 +9422,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 4355960557136256841}
   DefaultPoser: {fileID: 3633517355667807844}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!1 &2554729971627076990
 GameObject:
   m_ObjectHideFlags: 0
@@ -9408,6 +9543,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9432,6 +9568,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2625248930869221803
 GameObject:
   m_ObjectHideFlags: 0
@@ -9558,11 +9695,13 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 0
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 8549851308428609550}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 8549851308428609550}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 0
+  _allGrabbables: []
   UseColliderDistance: 1
 --- !u!1 &2794383037981180844
 GameObject:
@@ -9776,6 +9915,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -9784,13 +9926,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -9801,6 +9943,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -9878,11 +10025,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2931462135084776910
@@ -10077,6 +10224,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10101,6 +10249,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3100576286040850668
 GameObject:
   m_ObjectHideFlags: 0
@@ -10276,6 +10425,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10300,6 +10450,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3144833451554910924
 GameObject:
   m_ObjectHideFlags: 0
@@ -10355,6 +10506,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10379,6 +10531,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3196843514874467070
 GameObject:
   m_ObjectHideFlags: 0
@@ -10692,6 +10845,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -10700,13 +10856,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -10717,6 +10873,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -10794,11 +10955,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3424556170300316850
@@ -10895,11 +11056,13 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 0
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 161784548790661568}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 161784548790661568}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 0
+  _allGrabbables: []
   UseColliderDistance: 1
 --- !u!135 &6386924200610654621
 SphereCollider:
@@ -10972,6 +11135,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -10980,13 +11146,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -10997,6 +11163,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.5
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -11074,11 +11245,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3555605636670701052
@@ -11132,8 +11303,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 0
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 3033711167149581008}
   ThumbTip: {fileID: 5731253154423429683}
   IndexRoot: {fileID: 1438021773986033960}
@@ -11204,8 +11380,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 2
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -11215,31 +11394,61 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends:
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 59
-    Disabled: 0
     Type: 3
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   - Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 4
-    Disabled: 0
     Type: 2
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 1
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
 --- !u!114 &661097543577598129
@@ -11254,27 +11463,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 3442125707172612349}
   DefaultPoser: {fileID: 2439614899915082192}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!114 &2538557002532182063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11384,16 +11578,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 0}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 0}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6078592854270688070}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &3601375857541395199
 GameObject:
   m_ObjectHideFlags: 0
@@ -11451,6 +11648,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -11459,13 +11659,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -11476,6 +11676,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 0
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -11538,11 +11743,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &3602571719814437311
@@ -11767,6 +11972,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -11782,23 +11990,13 @@ MonoBehaviour:
   - {fileID: 6443727463852656577}
   Laser: {fileID: 6793223760305423778}
   HandGrabber: {fileID: 161784548790661568}
-  GrabIndicator: {fileID: 4264953191189147073}
+  GrabIndicator: {fileID: 0}
   GrabStyle: 1
   HapticsAmplitude: 0.1
   HapticsDuration: 0.1
-  RequiresFlick: 0
-  DistanceThreshold: 0.1
-  DynamicGrabThreshold: 0.3
-  PullForce: 100
-  MaxSpeed: 5
-  InitialSpeed: 2
-  Spring: 100000
-  Damper: 100
-  PercentToRotate: 0.4
-  MaxMissSpeed: 1
-  MaxMissAngularSpeed: 1
-  AutoGrabDistance: 0.2
   SFXGrab: {fileID: 8300000, guid: d11b68f8d86813641aec2b9adca0ccb7, type: 3}
+  ForcePullSettings: {fileID: 0}
+  RequiresFlick: 0
   ForceTime: 0.6
   YOffset: 0.3
   FlickStartThreshold: 1.25
@@ -11809,6 +12007,7 @@ MonoBehaviour:
   MaximumVelocityAutoGrab: 5
   AutoGrab: 1
   AdditionalAutoGrabTime: 1
+  AutoGrabDistance: 0.2
 --- !u!114 &4692006800479189632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11824,11 +12023,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &4089216108811733196
@@ -12058,6 +12257,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4283650176354132143
 GameObject:
   m_ObjectHideFlags: 0
@@ -12111,6 +12311,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -12126,23 +12329,13 @@ MonoBehaviour:
   - {fileID: 5188902941579031747}
   Laser: {fileID: 5227105059304040227}
   HandGrabber: {fileID: 8549851308428609550}
-  GrabIndicator: {fileID: 4898030218491866437}
+  GrabIndicator: {fileID: 0}
   GrabStyle: 1
   HapticsAmplitude: 0.1
   HapticsDuration: 0.1
-  RequiresFlick: 1
-  DistanceThreshold: 0.1
-  DynamicGrabThreshold: 0.3
-  PullForce: 100
-  MaxSpeed: 5
-  InitialSpeed: 2
-  Spring: 100000
-  Damper: 100
-  PercentToRotate: 0.4
-  MaxMissSpeed: 1
-  MaxMissAngularSpeed: 1
-  AutoGrabDistance: 0.2
   SFXGrab: {fileID: 8300000, guid: d11b68f8d86813641aec2b9adca0ccb7, type: 3}
+  ForcePullSettings: {fileID: 0}
+  RequiresFlick: 1
   ForceTime: 1
   YOffset: 0.3
   FlickStartThreshold: 6
@@ -12153,6 +12346,7 @@ MonoBehaviour:
   MaximumVelocityAutoGrab: 5
   AutoGrab: 1
   AdditionalAutoGrabTime: 1
+  AutoGrabDistance: 0.2
 --- !u!114 &232769991052276704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12168,11 +12362,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &4287206120375969989
@@ -12275,6 +12469,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12299,6 +12494,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4314807373784294700
 GameObject:
   m_ObjectHideFlags: 0
@@ -12356,6 +12552,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -12364,11 +12563,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 4314807373784294689}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 0}
-  AudioReleasedFallback: {fileID: 0}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -12378,6 +12579,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.2
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 0}
+  AudioReleasedFallback: {fileID: 0}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -12431,6 +12637,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -12458,12 +12667,14 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 0
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4314807373784294694}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4314807373784294694}
   IgnoredGrabbables:
   - {fileID: 0}
-  MaxDistanceAllowed: 0
+  _allGrabbables: []
   UseColliderDistance: 1
 --- !u!1 &4314807373902653383
 GameObject:
@@ -12521,6 +12732,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -12529,12 +12743,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 0}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -12544,6 +12759,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.2
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 0}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -12590,11 +12810,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &4314807374414541730
@@ -12684,6 +12904,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12708,6 +12929,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4337511432039222022
 GameObject:
   m_ObjectHideFlags: 0
@@ -12808,6 +13030,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12832,6 +13055,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4408249759940335511
 GameObject:
   m_ObjectHideFlags: 0
@@ -12887,6 +13111,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12911,6 +13136,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4437138756729592440
 GameObject:
   m_ObjectHideFlags: 0
@@ -12966,6 +13192,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12990,6 +13217,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4451922170779003833
 GameObject:
   m_ObjectHideFlags: 0
@@ -13146,6 +13374,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922170890695804
 GameObject:
   m_ObjectHideFlags: 0
@@ -13192,15 +13421,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 4451922170779003832}
-  TrackingSpace: 2
   FloorOffset: {fileID: 4451922172842429887}
+  CameraScale: {fileID: 0}
   CameraYOffset: 0
+  PlayerHeight: 1.66
+  SitStanding: 2
+  DebugKeyboardOffset: 0
   PlayerControllerYOffset: 0
   AdjustedCameraHeight: 0
-  StartingHeightSpeed: 0.01
-  StartingHeight: 1.5
-  ForceStartingHeight: 0
-  DebugKeyboardOffset: 0
+  SittingOffset: 0
+  CalibrateHeightOnStart: 0
 --- !u!114 &7933697262557498451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13216,6 +13446,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922171201510523
 GameObject:
   m_ObjectHideFlags: 0
@@ -13288,7 +13519,7 @@ MonoBehaviour:
   CanSteerWhileJumping: 1
   CanSprint: 1
   CanCrouch: 1
-  WaitForHMDActive: 1
+  DirectionStyle: 0
   GroundedLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -13317,11 +13548,13 @@ MonoBehaviour:
   FloorOffset: {fileID: 4451922172842429887}
   LeftControllerTransform: {fileID: 4451922172412432755}
   RightControllerTransform: {fileID: 4451922171663690103}
+  CameraScale: {fileID: 0}
   CameraRig: {fileID: 4519281363254670583}
   LeftHand: {fileID: 8549851308428609550}
   RightHand: {fileID: 161784548790661568}
   LeftJointHand: {fileID: 7425901432451142526}
   RightJointHand: {fileID: 7873686519176915799}
+  ScreenFader: {fileID: 0}
   HeadCollision: {fileID: 0}
   HeadCollisionFadeSpeed: 1
   HeadCollisionPushesBack: 1
@@ -13360,27 +13593,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcc26ecb5c24116a2b1c03eaeeef771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  TeleportLineSourceLeft: {fileID: 8915143591321427509}
+  TeleportLineSourceRight: {fileID: 6484545936654205002}
+  LeftHand: {fileID: 0}
+  RightHand: {fileID: 0}
+  ValidColor: {r: 2, g: 212, b: 186, a: 1}
+  InvalidColor: {r: 221, g: 37, b: 37, a: 1}
   LineRenderer: {fileID: 6714541958570909930}
   DownRenderer: {fileID: 8283941960487453472}
+  TeleportMarker: {fileID: 0}
+  DownLineMinLength: 0.2
+  DownLineMaxLength: 0.2
+  DisableMarkerWhenInvalid: 0
+  CurveType: 0
+  MaxAngle: 179
   LineSegments: 200
-  LineSegmentScale: 0.1
-  Strength: 750
-  StartingAngle: 20
+  CollisionBuffer: 0.05
   LayerMask:
     serializedVersion: 2
     m_Bits: 1
-  FloorOffset: 0.05
+  LayerMaskTriggerInteraction: 1
+  Speed: 7.5
+  TimeStep: 0.01
+  BezierAngleOffset: 0.3
+  BezierAngleOffsetCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  TeleportDistance: 5
+  DownRayLength: 5
+  DownRayIgnoreMask:
+    serializedVersion: 2
+    m_Bits: 3145984
   Dash: 0
   DashSpeed: 15
-  TeleportLineSourceLeft: {fileID: 8915143591321427509}
-  TeleportLineSourceRight: {fileID: 6484545936654205002}
-  TeleportMarker: {fileID: 7662854478927604886}
+  RequireOriginLineOfSight: 0
+  OriginIgnoreLayerMask:
+    serializedVersion: 2
+    m_Bits: 3145984
+  RequireDestinationLineOfSight: 0
+  DestinationHeight: 1
+  DestinationIntervals: 15
+  DestinationIgnoreLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  CheckDropDistance: 0
+  MaxDropDistance: 3
+  CheckJumpDistance: 0
+  MaxJumpDistance: 1.5
+  PlayerFitIgnoreLayerMask:
+    serializedVersion: 2
+    m_Bits: 3145984
+  TeleportableLayers:
+    serializedVersion: 2
+    m_Bits: 4292869887
+  MaxSurfaceAngle: 45
+  Capsule: {fileID: 0}
   BeforeTeleport:
     m_PersistentCalls:
       m_Calls: []
   AfterTeleport:
     m_PersistentCalls:
       m_Calls: []
+  PositionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  DownHitNormal: {x: 0, y: 0, z: 0}
+  SurfaceAngle: 0
+  IsDropDistanceValid: 0
+  IsSurfaceAngleValid: 0
+  IsDestinationInLineOfSight: 0
+  IsOnlyDropDistanceInvalid: 0
+  IsOriginInLineOfSight: 0
+  IsJumpDistanceValid: 0
+  TeleportState: 0
 --- !u!114 &596005561547509376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13393,7 +13682,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f258b67bcfea4b9782cfcdcd54058670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDistanceGrab: 1
   CanTriggerGrab: 0
+  ForceGrabActivation: 0
   TriggerGrabThreshold: 0.7
   MovementAxis: {x: 0, y: 0}
   TurnAxis: {x: 0, y: 0}
@@ -13418,13 +13709,21 @@ MonoBehaviour:
     JustActivated: 0
     JustDeactivated: 0
     Value: 0
+  LeftTriggerGrabState:
+    Active: 0
+    JustActivated: 0
+    JustDeactivated: 0
+    Value: 0
+  RightTriggerGrabState:
+    Active: 0
+    JustActivated: 0
+    JustDeactivated: 0
+    Value: 0
   IsLeftGrabActivated: 0
-  IsLeftTriggerGrabActivated: 0
   IsLeftHoldActive: 0
   IsLeftGripHoldActive: 0
   IsLeftTriggerHoldActive: 0
   IsRightGrabActivated: 0
-  IsRightTriggerGrabActivated: 0
   IsRightHoldActive: 0
   IsRightGripHoldActive: 0
   IsRightTriggerHoldActive: 0
@@ -13450,6 +13749,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922171663690100
 GameObject:
   m_ObjectHideFlags: 0
@@ -13533,6 +13833,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922172412432752
 GameObject:
   m_ObjectHideFlags: 0
@@ -13616,6 +13917,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922172591197906
 GameObject:
   m_ObjectHideFlags: 0
@@ -13697,9 +13999,9 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 6081627264163544218}
   - {fileID: 6561177841725287601}
@@ -13714,7 +14016,7 @@ MonoBehaviour:
   - {fileID: 4177083534439891302}
   - {fileID: 6345251765230466855}
   - {fileID: 4906748018607353132}
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7763459495106514419
@@ -13732,6 +14034,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4451922172842429884
 GameObject:
   m_ObjectHideFlags: 0
@@ -13781,6 +14084,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &4496294432012633332
 GameObject:
   m_ObjectHideFlags: 0
@@ -14019,6 +14323,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -14027,13 +14334,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -14044,6 +14351,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -14121,11 +14433,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &4569429960299196814
@@ -14230,11 +14542,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9592152fa64433fa0a6766a74007789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hvrSortMode: 0
-  ValidSockets: []
-  ClosestSocket: {fileID: 0}
   Grabber: {fileID: 8549851308428609550}
   MaxDistanceAllowed: 0
+  hvrSortMode: 0
+  IgnoredSockets: []
+  ClosestSocket: {fileID: 0}
+  ValidSockets: []
 --- !u!1 &4676656117721954067
 GameObject:
   m_ObjectHideFlags: 0
@@ -14353,6 +14666,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14377,6 +14691,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &1998312670137101849
 Animator:
   serializedVersion: 3
@@ -14491,16 +14806,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4323905988960148720}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4323905988960148720}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6924193544356309387}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &4821473638587660018
 GameObject:
   m_ObjectHideFlags: 0
@@ -14654,16 +14972,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 0}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 0}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6078592854270688070}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &4881571812465872157
 GameObject:
   m_ObjectHideFlags: 0
@@ -14792,16 +15113,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 0}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 0}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6078592854270688070}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &5129425861269874030
 GameObject:
   m_ObjectHideFlags: 0
@@ -15000,6 +15324,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15024,6 +15349,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &5547353380419046040
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15123,6 +15449,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15229,6 +15556,7 @@ MonoBehaviour:
   HandSide: 1
   DefaultLength: 3
   InputModule: {fileID: 0}
+  CurrentUIElement: {fileID: 0}
 --- !u!1 &5229362831247993575
 GameObject:
   m_ObjectHideFlags: 0
@@ -15284,6 +15612,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15308,6 +15637,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5233098946525281763
 GameObject:
   m_ObjectHideFlags: 0
@@ -15869,6 +16199,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15893,6 +16224,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5831633668378385330
 GameObject:
   m_ObjectHideFlags: 0
@@ -16207,6 +16539,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16231,6 +16564,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6286420770953275195
 GameObject:
   m_ObjectHideFlags: 0
@@ -16379,6 +16713,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16403,6 +16738,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6413122591683557359
 GameObject:
   m_ObjectHideFlags: 0
@@ -16511,8 +16847,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandFist'
@@ -16520,12 +16859,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: f6a50a26271c0f44cbbcbc7307260d31, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 0
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -16693,6 +17042,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16717,6 +17067,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &6562808835535419336
 GameObject:
   m_ObjectHideFlags: 0
@@ -17010,6 +17361,9 @@ MonoBehaviour:
   GrabType: 0
   TrackingType: 0
   HoldType: 1
+  GrabControl: 0
+  OverrideGrabTrigger: 0
+  GrabTrigger: 0
   RequireLineOfSight: 1
   EnableInvisibleHand: 0
   PhysicsPoserFallback: 0
@@ -17021,21 +17375,29 @@ MonoBehaviour:
   ReleasedAngularConversionFactor: 1
   ReleasedVelocityFactor: 1
   ReleasedAngularFactor: 1
+  GrabIndicator: {fileID: 0}
+  ForceGrabIndicator: {fileID: 0}
+  ShowGrabIndicator: 1
+  ShowTriggerGrabIndicator: 1
+  ShowForceGrabIndicator: 1
   LeftForceGrabberGrabPoint: {fileID: 0}
   RightForceGrabberGrabPoint: {fileID: 0}
   UseDefaultHighlighter: 1
   ForceGrabberHighlighter: {fileID: 0}
   ForceGrabbable: 1
+  ForcePullOverride: {fileID: 0}
   JointOverride: {fileID: 0}
   OneHandJointSettings: {fileID: 0}
   TwoHandJointSettings: {fileID: 0}
   PullingSettingsOverride: {fileID: 0}
+  PalmCenterOfMass: 0
   CanJointBreak: 0
   JointBreakForce: 2000
   JointBreakTorque: 2000
   HandGrabbedClip: {fileID: 0}
   StartingSocket: {fileID: 4314807373784294688}
   LinkStartingSocket: 1
+  AutoApplyLayer: 1
   RequireOverlapClearance: 0
   OverlapTimeout: 5
   FinalJointMaxAngle: 3
@@ -17043,6 +17405,10 @@ MonoBehaviour:
   FinalJointTimeout: 2
   CollisionParents: []
   ExtraIgnoreCollisionParents: []
+  GrabColliders: []
+  ConsiderGrabPointAngle: 1
+  UseColliderClosestPoint: 1
+  DisableHandCollision: 0
   CollisionDetection: 2
   ShowBoundingBox: 0
   DrawCenterOfMass: 0
@@ -17077,8 +17443,19 @@ MonoBehaviour:
   HandReleased:
     m_PersistentCalls:
       m_Calls: []
+  HandFullReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  Socketed:
+    m_PersistentCalls:
+      m_Calls: []
+  UnSocketed:
+    m_PersistentCalls:
+      m_Calls: []
   Grabbers: []
   HandGrabbers: []
+  Stabbers: []
+  Stabbable: {fileID: 0}
 --- !u!114 &7691886170607817429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17096,6 +17473,7 @@ MonoBehaviour:
   CounterScale: {x: 1, y: 1, z: 1}
   SocketedClip: {fileID: 8300000, guid: 3887d63c10b15d7428ab9730a9453656, type: 3}
   UnsocketedClip: {fileID: 8300000, guid: dcf5082f059bb724c988b90b6bfdf02f, type: 3}
+  LinkedGrabbables: []
 --- !u!114 &7691886170607817428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17156,12 +17534,12 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents:
   - {fileID: 3253597430809594283}
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &6698106268212127518
@@ -17210,8 +17588,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -17219,12 +17600,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -17241,20 +17632,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsJointAnchor: 0
-  VisualGrabPoint: {fileID: 0}
-  HandPoser: {fileID: 6698106268212127515}
   AllowedAngleDifference: 360
   LeftHand: 0
   RightHand: 1
+  HandRotationOffset: {x: 40, y: 0, z: 0}
+  HandPositionOffset: {x: 0, y: 0, z: 0}
   GrabIndicatorPosition: {fileID: 0}
+  VisualGrabPoint: {fileID: 0}
+  HandPoser: {fileID: 6698106268212127515}
   IsLineGrab: 0
   LineStart: {fileID: 0}
   LineEnd: {fileID: 0}
   CanLineFlip: 1
   LooseDamper: 100
   LooseAngularDamper: 1
-  jointOffset: {x: 40, y: 0, z: 0}
-  UpdateJointOffset: 0
+  LineCanReposition: 1
+  LineCanRotate: 1
 --- !u!1 &6698106268637614387
 GameObject:
   m_ObjectHideFlags: 0
@@ -17373,8 +17766,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -17382,12 +17778,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -17404,20 +17810,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsJointAnchor: 0
-  VisualGrabPoint: {fileID: 0}
-  HandPoser: {fileID: 6698106268939803964}
   AllowedAngleDifference: 360
   LeftHand: 1
   RightHand: 0
+  HandRotationOffset: {x: 40, y: 0, z: 0}
+  HandPositionOffset: {x: 0, y: 0, z: 0}
   GrabIndicatorPosition: {fileID: 0}
+  VisualGrabPoint: {fileID: 0}
+  HandPoser: {fileID: 6698106268939803964}
   IsLineGrab: 0
   LineStart: {fileID: 0}
   LineEnd: {fileID: 0}
   CanLineFlip: 1
   LooseDamper: 100
   LooseAngularDamper: 1
-  jointOffset: {x: 40, y: 0, z: 0}
-  UpdateJointOffset: 0
+  LineCanReposition: 1
+  LineCanRotate: 1
 --- !u!1 &6698106269095040777
 GameObject:
   m_ObjectHideFlags: 0
@@ -18169,6 +18577,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -18177,13 +18588,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -18194,6 +18605,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -18271,11 +18687,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7281294085516514075
@@ -18336,6 +18752,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -18344,13 +18763,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -18361,6 +18780,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -18438,11 +18862,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7284383335652214583
@@ -18604,16 +19028,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 0}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 0}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6078592854270688070}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &7425901432451142523
 GameObject:
   m_ObjectHideFlags: 0
@@ -18709,6 +19136,8 @@ MonoBehaviour:
   ReturnedToController:
     m_PersistentCalls:
       m_Calls: []
+  EnableTargetAngularVelocity: 0
+  AngularVelocityScale: 1
   HandPhysics: {fileID: 2781690048303894574}
   MaxDistance: 0.8
   DisablePhysicsOnReturn: 0
@@ -18734,6 +19163,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -18743,10 +19175,10 @@ MonoBehaviour:
   _grabBag: {fileID: 5374191326596311682}
   GrabBags: []
   SocketBag: {fileID: 6016896272794695307}
+  InverseKinematics: 0
   HandGrabs: 0
   HandGrabSpeed: 5
   AllowMultiplayerSwap: 0
-  FallbackPoser: {fileID: 738748016192303362}
   GrabTrigger: 0
   HandSide: 0
   CloneHandModel: 1
@@ -18765,28 +19197,29 @@ MonoBehaviour:
   Inputs: {fileID: 596005561547509376}
   PhysicsPoser: {fileID: 194636684973679364}
   ForceGrabber: {fileID: 0}
-  GrabIndicator: {fileID: 4898030218491866437}
+  GrabIndicator: {fileID: 0}
+  TriggerGrabIndicator: {fileID: 0}
+  ControllerOffset: {fileID: 0}
+  FallbackPoser: {fileID: 738748016192303362}
   HandModel: {fileID: 2331106897662396092}
   JointAnchor: {fileID: 8549851308604829980}
   RaycastOrigin: {fileID: 4961313974468124160}
   TrackedController: {fileID: 4451922172412432755}
   InvisibleHand: {fileID: 8317536881349214913}
   OverlapSizer: {fileID: 6190120761596603304}
-  InstantVelocityThreshold: 1
-  InstantAngularThreshold: 1
-  PhysicsPoserVelocity: 0.75
-  PhysicsGrabberSizer: {fileID: 2477268017674216230}
   ReleasedVelocityFactor: 1.25
   ReleasedAngularConversionFactor: 1
   ReleasedAngularThreshold: 1
   ThrowLookback: 5
   ThrowLookbackStart: 0
+  TakePeakVelocities: 0
+  CountPeakVelocities: 3
   ThrowingCenterOfMass: {fileID: 0}
-  DebugThrowing: 0
-  PermanentGrabbable: {fileID: 0}
   DrawCenterOfMass: 0
   GrabToggleActive: 0
+  _triggerHoverTarget: {fileID: 0}
   HoveredSocket: {fileID: 0}
+  _hoverTarget: {fileID: 0}
 --- !u!114 &2781690048303894574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18834,11 +19267,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7455246275041359275
@@ -18904,16 +19337,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4323905988960148720}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4323905988960148720}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6924193544356309387}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &7459094926224332089
 GameObject:
   m_ObjectHideFlags: 0
@@ -19047,6 +19483,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -19055,13 +19494,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -19072,6 +19511,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -19149,11 +19593,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7605186252696168932
@@ -19572,6 +20016,8 @@ MonoBehaviour:
   ReturnedToController:
     m_PersistentCalls:
       m_Calls: []
+  EnableTargetAngularVelocity: 0
+  AngularVelocityScale: 1
   HandPhysics: {fileID: 5082096441566376654}
   MaxDistance: 0.8
   DisablePhysicsOnReturn: 0
@@ -19597,6 +20043,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -19606,10 +20055,10 @@ MonoBehaviour:
   _grabBag: {fileID: 6862583644372307256}
   GrabBags: []
   SocketBag: {fileID: 155576521717785623}
+  InverseKinematics: 0
   HandGrabs: 0
   HandGrabSpeed: 5
   AllowMultiplayerSwap: 0
-  FallbackPoser: {fileID: 4968222767816399942}
   GrabTrigger: 0
   HandSide: 1
   CloneHandModel: 1
@@ -19628,28 +20077,29 @@ MonoBehaviour:
   Inputs: {fileID: 596005561547509376}
   PhysicsPoser: {fileID: 5693281200954785640}
   ForceGrabber: {fileID: 0}
-  GrabIndicator: {fileID: 4264953191189147073}
+  GrabIndicator: {fileID: 0}
+  TriggerGrabIndicator: {fileID: 0}
+  ControllerOffset: {fileID: 0}
+  FallbackPoser: {fileID: 4968222767816399942}
   HandModel: {fileID: 1758907104587209185}
   JointAnchor: {fileID: 161784550021659365}
   RaycastOrigin: {fileID: 5172873551359523075}
   TrackedController: {fileID: 4451922171663690103}
   InvisibleHand: {fileID: 6279228143321068457}
   OverlapSizer: {fileID: 2223337754415940109}
-  InstantVelocityThreshold: 1
-  InstantAngularThreshold: 1
-  PhysicsPoserVelocity: 0.75
-  PhysicsGrabberSizer: {fileID: 6425030848398803815}
   ReleasedVelocityFactor: 1.25
   ReleasedAngularConversionFactor: 1
   ReleasedAngularThreshold: 1
   ThrowLookback: 5
   ThrowLookbackStart: 0
+  TakePeakVelocities: 0
+  CountPeakVelocities: 3
   ThrowingCenterOfMass: {fileID: 0}
-  DebugThrowing: 0
-  PermanentGrabbable: {fileID: 0}
   DrawCenterOfMass: 0
   GrabToggleActive: 0
+  _triggerHoverTarget: {fileID: 0}
   HoveredSocket: {fileID: 0}
+  _hoverTarget: {fileID: 0}
 --- !u!114 &5082096441566376654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19697,11 +20147,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 3
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7879603441202796682
@@ -19750,6 +20200,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19912,8 +20363,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 0
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 8566647122310520620}
   ThumbTip: {fileID: 1401376429808560079}
   IndexRoot: {fileID: 5697002126418382036}
@@ -19984,8 +20440,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -19993,12 +20452,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -20014,27 +20483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 8304588265787585793}
   DefaultPoser: {fileID: 9016330439741584428}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!1 &7913758035033898322
 GameObject:
   m_ObjectHideFlags: 0
@@ -20093,6 +20547,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -20101,13 +20558,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -20118,6 +20575,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.5
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -20195,11 +20657,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &7928796176326858312
@@ -20293,6 +20755,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -20399,6 +20862,7 @@ MonoBehaviour:
   HandSide: 0
   DefaultLength: 3
   InputModule: {fileID: 0}
+  CurrentUIElement: {fileID: 0}
 --- !u!1 &7952864453725274440
 GameObject:
   m_ObjectHideFlags: 0
@@ -20535,6 +20999,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -20732,6 +21197,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -21014,6 +21480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HandSide: 0
+  GrabPointPositionOffset: {x: 0, y: 0, z: 0}
+  GrabPointRotationOffset: {x: 0, y: 0, z: 0}
+  MiscPositionOffset: {x: 0, y: 0, z: 0}
+  MiscRotationOffset: {x: 0, y: 0, z: 0}
+  LiveUpdateOffsets: 0
 --- !u!54 &3375934529409840795
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21061,6 +21532,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &8192025094909028856
 GameObject:
   m_ObjectHideFlags: 0
@@ -21998,8 +22470,13 @@ MonoBehaviour:
   Preview: {fileID: 0}
   DoPreview: 0
   SelectedPose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
-  MirrorAxis: 0
   IsLeft: 1
+  MirrorAxis: 0
+  UseMatchRotation: 0
+  Forward: 1
+  Up: 2
+  OtherForward: 1
+  OtherUp: 2
   ThumbRoot: {fileID: 8317536880607689936}
   ThumbTip: {fileID: 3939916965253097970}
   IndexRoot: {fileID: 8317536882578923747}
@@ -22068,27 +22545,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebbffaca5ed8a340ae381fb8a5695d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PosePosAndRot: 1
+  FingerCurlSpeed: 16
   PhysicsPoser: {fileID: 0}
   Hand: {fileID: 332518313380846335}
   DefaultPoser: {fileID: 2689251219317536347}
-  UsePhysicsPoser: 0
-  PhysicsGripButton: 0
-  CurrentPose: {fileID: 0}
   CurrentPoser: {fileID: 0}
-  BlendedPrimary:
-    Position: {x: 0, y: 0, z: 0}
-    Rotation: {x: 0, y: 0, z: 0, w: 0}
-    Thumb:
-      Bones: []
-    Index:
-      Bones: []
-    Middle:
-      Bones: []
-    Ring:
-      Bones: []
-    Pinky:
-      Bones: []
-  BlendedSecondarys: []
 --- !u!114 &2689251219317536347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22103,8 +22565,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftHandPreview: {fileID: 0}
   RightHandPreview: {fileID: 0}
+  BodyPreview: {fileID: 0}
   PreviewLeft: 0
   PreviewRight: 0
+  LeftAutoPose: 0
+  RightAutoPose: 0
   SelectionIndex: 0
   PoseNames:
   - 'Primary: OculusCustomHandOpen'
@@ -22112,12 +22577,22 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: 3195f5271090d494f8a7cc10c2e5c898, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 1
     Button: 0
+    Disabled: 0
+    ThumbType: 0
+    IndexType: 0
+    MiddleType: 0
+    RingType: 0
+    PinkyType: 0
+    ThumbStart: 0.75
+    IndexStart: 1
+    MiddleStart: 0
+    RingStart: 0
+    PinkyStart: 0
   Blends: []
   ReferencePose: {fileID: 0}
   MirrorAxis: 0
@@ -22443,6 +22918,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -23305,11 +23781,13 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 0
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 161784548790661568}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 161784548790661568}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 0
+  _allGrabbables: []
   UseColliderDistance: 1
 --- !u!1 &8505917528627618422
 GameObject:
@@ -23426,6 +23904,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -23450,6 +23929,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &8549851308449674175
 GameObject:
   m_ObjectHideFlags: 0
@@ -23820,16 +24300,19 @@ MonoBehaviour:
       m_Calls: []
   PenalizeGrabbed: 1
   hvrSortMode: 0
+  MaxDistanceAllowed: 10
+  DistanceSource: {fileID: 0}
+  Grabber: {fileID: 4323905988960148720}
   ValidGrabbables: []
   ClosestGrabbable: {fileID: 0}
-  Grabber: {fileID: 4323905988960148720}
   IgnoredGrabbables: []
-  MaxDistanceAllowed: 10
+  _allGrabbables: []
   UseColliderDistance: 1
   RayCastOrigin: {fileID: 6924193544356309387}
   LayerMask:
     serializedVersion: 2
     m_Bits: 1048577
+  UseClosestPoint: 1
 --- !u!1 &8882475358353821046
 GameObject:
   m_ObjectHideFlags: 0
@@ -23888,6 +24371,9 @@ MonoBehaviour:
   Released:
     m_PersistentCalls:
       m_Calls: []
+  BeforeHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
   HoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -23896,13 +24382,13 @@ MonoBehaviour:
       m_Calls: []
   _grabBag: {fileID: 0}
   GrabBags: []
+  GrabControl: 0
+  GrabDetectionType: 1
+  CheckHandOverlap: 0
+  ReleasesOnHover: 0
+  HoldType: 0
   AutoSpawnPrefab: {fileID: 0}
-  AudioGrabbedOverride: {fileID: 0}
-  AudioReleasedOverride: {fileID: 0}
-  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
-  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847,
-    type: 3}
+  GrabTimeout: 0
   GrabbableMustBeHeld: 1
   GrabsFromHand: 0
   HoverActions: []
@@ -23913,6 +24399,11 @@ MonoBehaviour:
   CanRemoveGrabbable: 1
   ScaleGrabbable: 1
   Size: 0.1
+  CanGrabStabbingGrabbable: 0
+  AudioGrabbedOverride: {fileID: 0}
+  AudioReleasedOverride: {fileID: 0}
+  AudioGrabbedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
+  AudioReleasedFallback: {fileID: 8300000, guid: 9b424bd470d64e34f81ec06f2463c847, type: 3}
   SocketFilters: []
   FilterCondition: 0
   SpawnedPrefab:
@@ -23990,11 +24481,11 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  observableSearch: 2
   Synchronization: 1
   OwnershipTransfer: 0
+  observableSearch: 2
   ObservedComponents: []
-  viewIdField: 0
+  sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &8896847696939991488
@@ -24273,6 +24764,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -24459,6 +24951,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HandSide: 1
+  GrabPointPositionOffset: {x: 0, y: 0, z: 0}
+  GrabPointRotationOffset: {x: 0, y: 0, z: 0}
+  MiscPositionOffset: {x: 0, y: 0, z: 0}
+  MiscRotationOffset: {x: 0, y: 0, z: 0}
+  LiveUpdateOffsets: 0
 --- !u!54 &5830993751267992093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24506,6 +25003,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+  m_UseLocal: 0
 --- !u!1 &9129447284142322679
 GameObject:
   m_ObjectHideFlags: 0
@@ -24603,78 +25101,59 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7425901432451142520}
     m_Modifications:
-    - target: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_Name
       value: GrabIndicator
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
---- !u!1 &4898030218491866437 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-    type: 3}
-  m_PrefabInstance: {fileID: 1206617373057481025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5238420999093254143 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
   m_PrefabInstance: {fileID: 1206617373057481025}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7527662080289061317
@@ -24684,63 +25163,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7873686519176915793}
     m_Modifications:
-    - target: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_Name
       value: GrabIndicator
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-        type: 3}
+    - target: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -24748,13 +25215,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
 --- !u!4 &3493659680843970427 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-    type: 3}
-  m_PrefabInstance: {fileID: 7527662080289061317}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4264953191189147073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6000915197541340164, guid: ed9956e3d3a22b14dbbc8a64bfcb0629,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 6344543004509966014, guid: ed9956e3d3a22b14dbbc8a64bfcb0629, type: 3}
   m_PrefabInstance: {fileID: 7527662080289061317}
   m_PrefabAsset: {fileID: 0}

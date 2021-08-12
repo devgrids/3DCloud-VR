@@ -4,6 +4,7 @@ using System.IO;
 using TMPro;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.Networking;
 
 public class ClassContent : MonoBehaviour
 {
@@ -77,11 +78,7 @@ public class ClassContent : MonoBehaviour
 			fileJson = File.ReadAllText(filePath);
 		}
 
-		questions = JsonHelper.FromJsonArray<Questions>(fileJson);
-		totalQuestions = questions.Length - 1;
-
-		ChangeQuestions();
-		ShowQuestion(true);
+		questions = Util.FromJsonArray<Questions>(fileJson);
 
 #endif
 
