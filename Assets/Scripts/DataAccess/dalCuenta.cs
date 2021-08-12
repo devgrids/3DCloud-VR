@@ -11,8 +11,8 @@ public class dalCuenta : MonoBehaviour
     public static dalCuenta sharedInstance;
     public Cuenta cuenta;
     
-    public TMP_InputField inputUser;
-    public TMP_InputField inputPassword;
+    public InputField inputUser;
+    public InputField inputPassword;
 
     public static bool isDocente;
 

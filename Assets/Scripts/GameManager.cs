@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance;
     public GameState currentGameState = GameState.login;
 
-    [SerializeField] Canvas loginCanvas = null;
-    [SerializeField] Canvas lobbyDocenteCanvas = null;
-    [SerializeField] Canvas lobbyEstudianteCanvas = null;
+    [SerializeField] GameObject loginCanvas = null;
+    [SerializeField] GameObject lobbyDocenteCanvas = null;
+    [SerializeField] GameObject lobbyEstudianteCanvas = null;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SetGameState(GameState.login);
+        SetGameState(currentGameState);
     }
 
     private void Update()
@@ -37,21 +37,21 @@ public class GameManager : MonoBehaviour
     {
         if (newGameState == GameState.login)
         {
-            loginCanvas.enabled = true;
-            lobbyDocenteCanvas.enabled = false;
-            lobbyEstudianteCanvas.enabled = false;
+            loginCanvas.SetActive(true);
+            lobbyDocenteCanvas.SetActive(false);
+            lobbyEstudianteCanvas.SetActive(false);
         }
         else if (newGameState == GameState.lobbyDocente)
         {
-            loginCanvas.enabled = false;
-            lobbyDocenteCanvas.enabled = true;
-            lobbyEstudianteCanvas.enabled = false;
+            loginCanvas.SetActive(false);
+            lobbyDocenteCanvas.SetActive(true);
+            lobbyEstudianteCanvas.SetActive(false);
         }
         else if (newGameState == GameState.lobbyEstudiante)
         {
-            loginCanvas.enabled = false;
-            lobbyDocenteCanvas.enabled = false;
-            lobbyEstudianteCanvas.enabled = true;
+            loginCanvas.SetActive(false);
+            lobbyDocenteCanvas.SetActive(false);
+            lobbyEstudianteCanvas.SetActive(true);
         }
 
         this.currentGameState = newGameState;
