@@ -66,19 +66,7 @@ public class ClassContent : MonoBehaviour
 
 #elif UNITY_ANDROID
 		string filePath = Path.Combine(Application.streamingAssetsPath + "/", fileName + fileFormat);
-		string fileJson;
-		if (filePath.Contains("://") || filePath.Contains(":///"))
-		{
-			UnityWebRequest www = UnityWebRequest.Get(filePath);
-			yield return www.Send();
-			fileJson = www.downloadHandler.text;
-		}
-		else
-		{
-			fileJson = File.ReadAllText(filePath);
-		}
-
-		questions = Util.FromJsonArray<Questions>(fileJson);
+		LoadData(filePath);
 
 #endif
 
