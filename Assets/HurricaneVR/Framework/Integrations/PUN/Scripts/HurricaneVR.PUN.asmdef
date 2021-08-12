@@ -1,0 +1,22 @@
+{
+    "name": "HurricaneVR.PUN",
+    "references": [
+        "HurricaneVR.Framework",
+        "Hurricane.Shared",
+        "PhotonRealtime",
+        "PhotonChat",
+        "PhotonUnityNetworking",
+        "PhotonUnityNetworking.Utilities"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "HVR_PUN"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

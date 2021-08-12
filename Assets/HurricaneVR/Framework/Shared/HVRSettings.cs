@@ -79,6 +79,7 @@ namespace HurricaneVR.Framework.Shared
         public GameObject LeftHand;
         public GameObject RightHand;
         public bool InverseKinematics;
+        public bool IKHandMirroring = true;
         public GameObject FullBody;
         public Vector3 HandPoseHandleOffset = new Vector3(0f, .08f, .0f);
         public HVRHandPose OpenHandPose;

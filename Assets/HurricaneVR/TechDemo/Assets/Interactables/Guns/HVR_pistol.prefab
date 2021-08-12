@@ -794,7 +794,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -819,6 +819,7 @@ MonoBehaviour:
   InertiaTensor: {x: 0.01, y: 0.01, z: 0.01}
   COMGizmoSize: {x: 0.02, y: 0.02, z: 0.02}
   LiveUpdate: 0
+  Rigidbody: {fileID: 0}
 --- !u!138 &8575909756848812395
 FixedJoint:
   m_ObjectHideFlags: 0
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   ForwardSpeed: 10
   Difficulty: 0.05
   ImmediateReleaseWhenOpen: 1
+  LockBackOverride: 0
   Type: 0
   LocksForward: 0
   TriggerUnlocks: 0
@@ -1942,6 +1944,8 @@ MonoBehaviour:
   AmmoEjectVelocity: 0
   MuzzleSmokeTime: 1.5
   ChambersAfterFiring: 1
+  EjectCasingAfterFiring: 1
+  BoltPushedBackAfterEmpty: 1
   UseAmmoProperties: 0
   NoAmmoRange: 40
   AddForceOnHit: 1
@@ -1969,6 +1973,9 @@ MonoBehaviour:
   BulletPrefab: {fileID: 7570415639619388451, guid: 416e18e376860fc499add1ebea2501b4,
     type: 3}
   BulletLife: 5
+  Fired:
+    m_PersistentCalls:
+      m_Calls: []
   IsTriggerReset: 0
   IsTriggerPulled: 0
 --- !u!54 &8575909758062007611

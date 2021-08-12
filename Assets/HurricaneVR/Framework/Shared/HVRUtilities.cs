@@ -53,7 +53,13 @@ namespace HurricaneVR.Framework.Shared
             return axis * (angle / Time.fixedDeltaTime);
         }
 
-        public static IEnumerable<Collider> GetColliders(this Rigidbody rigidbody, Transform transform)
+        public static IEnumerable<Collider> GetColliders(this Rigidbody rigidbody, bool includeTriggers = false)
+        {
+            return GetColliders(rigidbody, rigidbody.transform, includeTriggers);
+        }
+
+
+        private static IEnumerable<Collider> GetColliders(this Rigidbody rigidbody, Transform transform, bool includeTriggers = false)
         {
             var rb = transform.GetComponent<Rigidbody>();
             if (rb && rb != rigidbody)
@@ -61,7 +67,8 @@ namespace HurricaneVR.Framework.Shared
 
             foreach (var c in transform.GetComponents<Collider>())
             {
-                yield return c;
+                if(!c.isTrigger || (c.isTrigger && includeTriggers))
+                    yield return c;
             }
 
             foreach (Transform child in transform)
@@ -138,7 +145,7 @@ namespace HurricaneVR.Framework.Shared
 
         public static string LogFormat(this Vector3 v)
         {
-            return $"{v.x:N1},{v.y:N1},{v.z:N1}";
+            return $"{v.x:f3},{v.y:f3},{v.z:f3}";
         }
 
         public static float Remap(this float num, float lowVal, float highVal, float min, float max)

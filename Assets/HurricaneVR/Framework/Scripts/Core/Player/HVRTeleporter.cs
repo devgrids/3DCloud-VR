@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections;
+using System.Linq;
 using HurricaneVR.Framework.ControllerInput;
+using HurricaneVR.Framework.Core.Grabbers;
 using HurricaneVR.Framework.Shared;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,6 +14,8 @@ namespace HurricaneVR.Framework.Core.Player
         public Transform Camera;
         public Transform TeleportLineSourceLeft;
         public Transform TeleportLineSourceRight;
+        public HVRHandGrabber LeftHand;
+        public HVRHandGrabber RightHand;
 
         [Header("Visuals")]
         public Color ValidColor = new Color(2, 212, 186);
@@ -41,10 +44,6 @@ namespace HurricaneVR.Framework.Core.Player
 
         [Tooltip("Trigger setting for ray cast")]
         public QueryTriggerInteraction LayerMaskTriggerInteraction = QueryTriggerInteraction.Ignore;
-
-        [Tooltip("Vertical buffer added to the ray cast destination point")]
-        public float FloorOffset = .01f;
-
 
         [Header("Ballistic Settings")]
         public float Speed = 7.5f;
@@ -119,8 +118,10 @@ namespace HurricaneVR.Framework.Core.Player
         public CapsuleCollider Capsule;
 
 
-        public UnityEvent BeforeTeleport = new UnityEvent();
+        public TeleportPositionUpdate BeforeTeleport = new TeleportPositionUpdate();
         public UnityEvent AfterTeleport = new UnityEvent();
+        public TeleportPositionUpdate PositionUpdate = new TeleportPositionUpdate();
+
 
         [Header("Debugging")]
 
@@ -198,11 +199,6 @@ namespace HurricaneVR.Framework.Core.Player
         public Transform TeleportLineSource => TeleportHand == HVRHandSide.Left ? TeleportLineSourceLeft : TeleportLineSourceRight;
 
         /// <summary>
-        /// Offset applied to the raycast hit position
-        /// </summary>
-        protected Vector3 VerticalBuffer { get; set; }
-
-        /// <summary>
         /// Did the forward raycast find a valid teleportable location
         /// </summary>
         public bool IsRaycastValid { get; set; }
@@ -219,6 +215,12 @@ namespace HurricaneVR.Framework.Core.Player
         public bool CanTeleport { get; protected set; }
         public bool IsTeleporting { get; protected set; }
         public Vector3 CapsuleBottom => Capsule ? Capsule.GetBottom() : CharacterController.GetBottom();
+
+        protected virtual bool LeftHandPrevents { get; set; }
+
+        protected virtual bool RightHandPrevents { get; set; }
+
+        protected virtual bool HandPrevents => LeftHandPrevents || RightHandPrevents;
 
         public bool IsTeleportPreviouslyValid { get; protected set; }
 
@@ -240,7 +242,6 @@ namespace HurricaneVR.Framework.Core.Player
                 Camera = GetComponentInChildren<HVRCamera>()?.transform;
             }
 
-            VerticalBuffer = new Vector3(0f, FloorOffset, 0f);
             PlayerInputs = GetComponent<HVRPlayerInputs>();
             LineRendererPoints = new Vector3[LineSegments];
 
@@ -253,8 +254,31 @@ namespace HurricaneVR.Framework.Core.Player
 
         protected virtual void Start()
         {
+            if (!LeftHand)
+            {
+                LeftHand = transform.root.GetComponentsInChildren<HVRHandGrabber>().FirstOrDefault(e => e.HandSide == HVRHandSide.Left);
+            }
 
+            if (!RightHand)
+            {
+                RightHand = transform.root.GetComponentsInChildren<HVRHandGrabber>().FirstOrDefault(e => e.HandSide == HVRHandSide.Right);
+            }
+
+            if (LeftHand)
+            {
+                LeftHand.Grabbed.AddListener(LeftHandGrabbed);
+                LeftHand.Released.AddListener(LeftHandReleased);
+            }
+
+            if (RightHand)
+            {
+                RightHand.Grabbed.AddListener(RightHandGrabbed);
+                RightHand.Released.AddListener(RightHandReleased);
+            }
         }
+  
+
+      
 
         public virtual void Enable()
         {
@@ -265,6 +289,7 @@ namespace HurricaneVR.Framework.Core.Player
         {
             IsAiming = false;
             CanTeleport = false;
+            IsTeleportValid = false;
             ToggleGraphics(false);
         }
 
@@ -276,7 +301,11 @@ namespace HurricaneVR.Framework.Core.Player
                 IsTeleportPreviouslyValid = IsTeleportValid;
                 BeforeRaycast();
                 Raycast();
-                AfteRaycast();
+                AfterRaycast();
+                if (HandPrevents)
+                {
+                    IsTeleportValid = false;
+                }
                 SurfaceAngle = Vector3.Angle(Vector3.up, SurfaceNormal);
                 CheckValidTeleportChanged(IsTeleportPreviouslyValid);
                 HandleValidStatus(IsTeleportValid);
@@ -350,7 +379,7 @@ namespace HurricaneVR.Framework.Core.Player
                     HitPosition = forwardHit.point - direction.normalized * CollisionBuffer;
                     HitCollider = forwardHit.collider;
 
-                    destination = forwardHit.point + VerticalBuffer;
+                    destination = forwardHit.point;// + VerticalBuffer;
 
                     if (CheckValidDestination(HitCollider.gameObject, destination, forwardHit.normal))
                     {
@@ -376,7 +405,7 @@ namespace HurricaneVR.Framework.Core.Player
                 LastDownwardPoint = downwardHit.point;
                 DownHitNormal = downwardHit.normal;
 
-                destination = downwardHit.point + VerticalBuffer;
+                destination = downwardHit.point;// + VerticalBuffer;
 
                 if (!CheckValidDestination(downwardHit.collider.gameObject, destination, downwardHit.normal))
                 {
@@ -390,11 +419,11 @@ namespace HurricaneVR.Framework.Core.Player
                 SurfaceNormal = downwardHit.normal;
             }
 
-            AfteRaycast();
+            AfterRaycast();
         }
 
 
-        protected virtual void AfteRaycast()
+        protected virtual void AfterRaycast()
         {
             var downOrigin = LastValidPoint;
             var downTarget = TeleportDestination;
@@ -852,7 +881,7 @@ namespace HurricaneVR.Framework.Core.Player
         protected virtual void OnBeforeTeleport()
         {
             IsTeleporting = true;
-            BeforeTeleport.Invoke();
+            BeforeTeleport.Invoke(CharacterController.transform.position);
             CharacterController.enabled = false;
         }
 
@@ -866,13 +895,15 @@ namespace HurricaneVR.Framework.Core.Player
 
         protected virtual void UpdateDashTeleport()
         {
-            if (Vector3.Distance(CharacterController.transform.position, TeleportDestination) > .3)
+            if (Vector3.Distance(CharacterController.transform.position, TeleportDestination) > .01)
             {
                 CharacterController.transform.position = Vector3.MoveTowards(CharacterController.transform.position, TeleportDestination, DashSpeed * Time.deltaTime);
+                PositionUpdate.Invoke(CharacterController.transform.position);
             }
             else
             {
                 CharacterController.transform.position = TeleportDestination;
+                PositionUpdate.Invoke(CharacterController.transform.position);
                 TeleportState = TeleportState.AwaitingNextFrame;
             }
         }
@@ -880,7 +911,40 @@ namespace HurricaneVR.Framework.Core.Player
         protected virtual void UpdateTeleport()
         {
             CharacterController.transform.position = TeleportDestination;
+            PositionUpdate.Invoke(CharacterController.transform.position);
             TeleportState = TeleportState.AwaitingNextFrame;
+        }
+
+        protected virtual void RightHandReleased(HVRGrabberBase arg0, HVRGrabbable grabbable)
+        {
+            RightHandPrevents = false;
+        }
+
+        protected virtual void RightHandGrabbed(HVRGrabberBase arg0, HVRGrabbable grabbable)
+        {
+            if (grabbable.TryGetComponent<HVRTeleportOptions>(out var o))
+            {
+                if (o.BeforeTeleportOption == BeforeTeleportOptions.PreventsTeleport)
+                {
+                    RightHandPrevents = true;
+                }
+            }
+        }
+
+        protected virtual void LeftHandReleased(HVRGrabberBase arg0, HVRGrabbable grabbable)
+        {
+            LeftHandPrevents = false;
+        }
+
+        protected virtual void LeftHandGrabbed(HVRGrabberBase arg0, HVRGrabbable grabbable)
+        {
+            if (grabbable.TryGetComponent<HVRTeleportOptions>(out var o))
+            {
+                if (o.BeforeTeleportOption == BeforeTeleportOptions.PreventsTeleport)
+                {
+                    LeftHandPrevents = true;
+                }
+            }
         }
     }
 
@@ -895,5 +959,11 @@ namespace HurricaneVR.Framework.Core.Player
         Teleporting,
         Dashing,
         AwaitingNextFrame
+    }
+
+    [Serializable]
+    public class TeleportPositionUpdate : UnityEvent<Vector3>
+    {
+
     }
 }

@@ -327,6 +327,8 @@ namespace HurricaneVR.Framework.Core
             //    Debug.LogWarning($"{name} has a scale of {transform.localScale.LogFormat()} when it should be [1,1,1]");
             //}
 
+            Rigidbody = GetComponent<Rigidbody>();
+
             SetupColliders();
 
             //VRGrabPoints = GetComponentInChildren<HVRGrabPoints>();
@@ -349,7 +351,7 @@ namespace HurricaneVR.Framework.Core
 
             SetupForceGrabberTarget();
 
-            Rigidbody = GetComponent<Rigidbody>();
+
 
             if (HVRSettings.Instance.AutoApplyGrabbableLayer && AutoApplyLayer)
             {
@@ -450,7 +452,7 @@ namespace HurricaneVR.Framework.Core
             if (HandGrabbers.Count > 0)
             {
                 TrackVelocities();
-                
+
             }
 
             ProcessFixedUpdate();
@@ -469,10 +471,21 @@ namespace HurricaneVR.Framework.Core
             Destroyed.RemoveAllListeners();
         }
 
-        private void OnCollisionEnter(Collision other)
+        protected virtual void OnCollisionEnter(Collision other)
         {
             Collided.Invoke(this);
         }
+
+        protected virtual void OnCollisionStay(Collision collisionInfo)
+        {
+
+        }
+
+        protected virtual void OnCollisionExit(Collision other)
+        {
+
+        }
+
 
         private void OnJointBreak(float breakForce)
         {

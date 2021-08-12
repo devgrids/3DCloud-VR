@@ -469,7 +469,7 @@ namespace HurricaneVR.Editor
             var gunRB = hvrGunBase.GetRigidbody();
 
             var rb = offhand.AddComponent<Rigidbody>();
-            rb.useGravity = false;
+            //rb.useGravity = false;
             var rbOverrides = offhand.AddComponent<HVRRigidBodyOverrides>();
             rbOverrides.OverrideRotation = true;
             rbOverrides.OverrideTensor = true;

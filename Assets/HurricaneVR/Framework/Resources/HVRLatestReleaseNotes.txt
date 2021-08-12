@@ -1,3 +1,40 @@
+Release 2.1
+
+Teleporting:
+	HVRTeleportCollisionHandler: Will attempt to prevent hand and held objects from being stuck inside defined collision layers after teleporting. 
+	Teleport handling code for moving held objects with the player in HVRPlayerController has been removed and moved to this component.
+	
+	AfterTeleportOptions: 
+		TeleportDefault - does nothing 
+		BoundingBoxSweep - bounding box of grabbable colliders will be used to detect overlap after teleport.
+		DisableCollision - grabbable object collision is disabled and hand cannot drop object until clear.
+	
+	New HVRTeleportOptions component that can bee added to grabbable objects.
+		BeforeTeleportOptions: optionally block teleporting, or to force a release of the object pre teleport.
+		AfterTeleportOptions: per grabbable override of collision handler options.
+			TeleportDefault - uses HVRTeleportCollisionHandler setting
+			
+	Rig prefabs have been updated with the new component.
+			
+
+HVRHandPoser - VRIK hand position / rotation mirroring is now supported for standard rigs and can be enabled / disabled on HVRSettings:IKHandMirroring.
+Non standard rigs such as the VRIK Pilot require additional "Match Rotation" settings, setup on the HVRPosableHand component, see the Pilot poser prefab 
+as an example.
+
+HVRHandPoserEditor - updated to handle deprecated onSelectionChanged method in the latest Unity versions.
+
+New Tech Demo Guns and Gun Creator: 
+	If you created guns using the new gun editor you will want to re-enable gravity on the stabilizer grabbable rigidbody.
+	The Gun Editor has been updated to not disable gravity on newly created guns.
+	Stabilizer grabbables on the example gun prefabs have had gravity re-enabled on them
+
+HVRPosableGrabPoint:
+	Fixed a hand offset issue when IsJointAnchor was checked.
+
+HexaBody Integration - fixed missing easy collider creator hulls on the elevator locker object
+
+
+
 Release 2.0.5
 
 Fixed an issue with the teleporter which was causing the physics hands to jump after teleporting when Update / Fixed are out of sync.

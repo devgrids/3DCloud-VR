@@ -128,15 +128,6 @@ namespace HurricaneVR.Framework.Core.Player
         private float _timeSinceLastRotation;
         private Quaternion _previousRotation;
 
-        private Transform _leftParent;
-        private Transform _rightParent;
-
-        private Transform _leftGrabbableParent;
-        private Transform _rightGrabbableParent;
-
-        private HVRGrabbable _leftTeleportGrabbable;
-        private HVRGrabbable _rightTeleportGrabbable;
-
         private float _timeSinceLastPress;
         private bool _awaitingSecondClick;
 
@@ -164,11 +155,11 @@ namespace HurricaneVR.Framework.Core.Player
                 _hasTeleporter = true;
             }
 
-            if (_hasTeleporter)
-            {
-                Teleporter.BeforeTeleport.AddListener(OnBeforeTeleport);
-                Teleporter.AfterTeleport.AddListener(OnAfterTeleport);
-            }
+            //if (_hasTeleporter)
+            //{
+            //    Teleporter.BeforeTeleport.AddListener(OnBeforeTeleport);
+            //    Teleporter.AfterTeleport.AddListener(OnAfterTeleport);
+            //}
 
             Inputs = GetComponent<HVRPlayerInputs>();
 
@@ -217,88 +208,7 @@ namespace HurricaneVR.Framework.Core.Player
 
             _isCameraCorrecting = false;
         }
-
-        private void OnAfterTeleport()
-        {
-            try
-            {
-                if (LeftJointHand)
-                {
-                    LeftJointHand.Enable();
-                }
-
-                if (RightJointHand)
-                {
-                    RightJointHand.Enable();
-                }
-
-                if (_leftParent)
-                    LeftHand.transform.SetParent(_leftParent, true);
-                else
-                    LeftHand.transform.parent = null;
-
-                if (_rightParent)
-                    RightHand.transform.SetParent(_leftParent, true);
-                else
-                    RightHand.transform.parent = null;
-
-                if (_leftTeleportGrabbable)
-                {
-                    if (_leftGrabbableParent)
-                        _leftTeleportGrabbable.transform.SetParent(_leftGrabbableParent, true);
-                    else
-                        _leftTeleportGrabbable.transform.parent = null;
-                }
-
-                if (_leftTeleportGrabbable != _rightTeleportGrabbable && _rightTeleportGrabbable)
-                {
-                    if (_rightGrabbableParent)
-                        _rightTeleportGrabbable.transform.SetParent(_rightGrabbableParent, true);
-                    else
-                        _rightTeleportGrabbable.transform.parent = null;
-                }
-            }
-            finally
-            {
-                _leftGrabbableParent = null;
-                _rightGrabbableParent = null;
-                _leftTeleportGrabbable = null;
-                _rightTeleportGrabbable = null;
-            }
-        }
-
-        private void OnBeforeTeleport()
-        {
-            if (LeftJointHand)
-            {
-                LeftJointHand.Disable();
-            }
-
-            if (RightJointHand)
-            {
-                RightJointHand.Disable();
-            }
-
-            _leftParent = LeftHand.transform.parent;
-            _rightParent = RightHand.transform.parent;
-
-            LeftHand.transform.SetParent(transform, true);
-            RightHand.transform.SetParent(transform, true);
-
-            if (LeftHand.GrabbedTarget)
-            {
-                _leftTeleportGrabbable = LeftHand.GrabbedTarget;
-                _leftGrabbableParent = _leftTeleportGrabbable.transform.parent;
-                _leftTeleportGrabbable.transform.SetParent(LeftHand.transform, true);
-            }
-
-            if (LeftHand.GrabbedTarget != RightHand.GrabbedTarget && RightHand.GrabbedTarget)
-            {
-                _rightTeleportGrabbable = RightHand.GrabbedTarget;
-                _rightGrabbableParent = _rightTeleportGrabbable.transform.parent;
-                _rightTeleportGrabbable.transform.SetParent(RightHand.transform, true);
-            }
-        }
+      
 
         private void Start()
         {

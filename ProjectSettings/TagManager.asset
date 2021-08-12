@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - VRGazeInteractable
+  - Money
+  - Bullet
+  - projectile
   layers:
   - Default
   - TransparentFX
@@ -14,6 +17,8 @@ TagManager:
   - UI
   - 
   - 
+  - Player
+  - DynamicPose
   - 
   - 
   - 
@@ -24,10 +29,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hand
   - 
   - 
   - 

@@ -67,6 +67,11 @@ namespace VRUiKits.Utils
             }
         }
 
+        public int GetOption()
+        {
+            return selectedIdx;
+        }
+
         void ActivateOption(int i)
         {
             if (i >= 0 && i < optionItems.Count)

@@ -132,7 +132,7 @@ MonoBehaviour:
   EnableInvisibleHand: 0
   PhysicsPoserFallback: 1
   ParentHandModelImmediately: 0
-  ParentHandModel: 1
+  ParentHandModel: 0
   BreakDistance: 1
   RemainsKinematic: 1
   Stationary: 0
@@ -297,12 +297,12 @@ MonoBehaviour:
     Pose: {fileID: 11400000, guid: d9426f37c169c9341b8baa8c84fc2b4e, type: 2}
     Weight: 1
     Mask: 0
-    Disabled: 0
     Type: 0
     Speed: 16
     AnimationParameter: None
     ButtonParameter: 0
     Button: 0
+    Disabled: 0
     ThumbType: 0
     IndexType: 0
     MiddleType: 0

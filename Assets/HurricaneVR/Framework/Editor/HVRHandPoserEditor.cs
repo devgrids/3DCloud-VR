@@ -387,7 +387,7 @@ namespace HurricaneVR.Editor
                 selectedBone = null;
             }
         }
-        
+
         private void OnEnable()
         {
             Poser = target as HVRHandPoser;
@@ -922,9 +922,12 @@ namespace HurricaneVR.Editor
                 PreviewLeftToggle.SetValueWithoutNotify(false);
                 PreviewRightToggle.SetValueWithoutNotify(false);
 
-                if (LeftHandPreview) DestroyImmediate(LeftHandPreview);
-                if (RightHandPreview) DestroyImmediate(RightHandPreview);
-                if (BodyPreview) DestroyImmediate(BodyPreview);
+                if (LeftHandPreview)
+                    DestroyImmediate(LeftHandPreview);
+                if (RightHandPreview)
+                    DestroyImmediate(RightHandPreview);
+                if (BodyPreview) 
+                    DestroyImmediate(BodyPreview);
             }
 
             _root.schedule.Execute(PopulatePoses);
@@ -1194,21 +1197,6 @@ namespace HurricaneVR.Editor
             };
         }
 
-        private Quaternion MirrorRotation(Quaternion r)
-        {
-            Vector3 forward = r * Vector3.forward;
-            Vector3 up = r * Vector3.up;
-
-            forward.z *= -1;
-            up.z *= -1;
-
-            //forward.y *= -1;
-            //up.y *= -1;
-
-
-            return Quaternion.LookRotation(forward, up);
-        }
-
         private void SetupMirrorButtons()
         {
             var mirrorRight = _root.Q<Button>("ButtonMirrorRight");
@@ -1228,13 +1216,12 @@ namespace HurricaneVR.Editor
 
                     Undo.RegisterFullObjectHierarchyUndo(rightHand.gameObject, "Mirror left to right");
                     rightHand.Pose(right, false);
-                    Undo.RegisterFullObjectHierarchyUndo(_rightIKTarget, "Mirror left to right");
-
-                    //_rightIKTarget.rotation = MirrorRotation(_leftIKTarget.rotation);
-                    //_rightIKTarget.localPosition = right.Position;
-
-                    //_rightIKTarget.localPosition = right.Position;
-                    //_rightIKTarget.localRotation = right.Rotation;
+                    if (HVRSettings.Instance.IKHandMirroring)
+                    {
+                        Undo.RegisterFullObjectHierarchyUndo(_rightIKTarget, "Mirror left to right");
+                        _rightIKTarget.localRotation = right.Rotation;
+                        _rightIKTarget.localPosition = right.Position;
+                    }
                 }
                 else
                 {
@@ -1268,9 +1255,12 @@ namespace HurricaneVR.Editor
 
                     Undo.RegisterFullObjectHierarchyUndo(leftHand.gameObject, "Mirror right to left");
                     leftHand.Pose(pose, false);
-                    Undo.RegisterFullObjectHierarchyUndo(_leftIKTarget, "Mirror right to left");
-                    //_leftIKTarget.localPosition = pose.Position;
-                    //_leftIKTarget.localRotation = pose.Rotation;
+                    if (HVRSettings.Instance.IKHandMirroring)
+                    {
+                        Undo.RegisterFullObjectHierarchyUndo(_leftIKTarget, "Mirror right to left");
+                        _leftIKTarget.localPosition = pose.Position;
+                        _leftIKTarget.localRotation = pose.Rotation;
+                    }
                 }
                 else
                 {
@@ -1361,17 +1351,23 @@ namespace HurricaneVR.Editor
             PosesListView.makeItem = MakePoseListItem;
             PosesListView.bindItem = BindItem;
             PosesListView.selectionType = SelectionType.Single;
-            PosesListView.onSelectionChanged += OnPoseListIndexChanged;
+            
+            
             PosesListView.itemHeight = (int)EditorGUIUtility.singleLineHeight;
             PosesListView.style.height = EditorGUIUtility.singleLineHeight * 5;
             PopulatePoses();
+
+#if UNITY_2021_1_OR_NEWER
+
+            PosesListView.onSelectionChange += OnPoseSelectionChanged;
+#else
+
+            PosesListView.onSelectionChanged += OnPoseListIndexChanged;
+
+#endif
         }
 
-        public ListView BlendListView;
         private BindableElement blendEditorRoot;
-        private SerializedObject blendObj;
-        private bool _leftTracking;
-        private bool _selectedPoseHandled;
 
         public HVRPosableHand LeftPosableHand;
         public HVRPosableHand RightPosableHand;
@@ -1385,43 +1381,28 @@ namespace HurricaneVR.Editor
             return previewName;
         }
 
-
-        private void OnPoseListIndexChanged(List<object> p)
+        private void OnPoseSelectionChanged(IEnumerable<object> obj)
         {
-            //if (PreviewLeft.value || PreviewRight.value)
-            //{
-            //    if (!EditorUtility.DisplayDialog("Warning!", $"Preview hands are enabled. Switch pose and lose changes?", "Yes", "No"))
-            //    {
-            //        try
-            //        {
-            //            PosesListView.onSelectionChanged -= OnPoseListIndexChanged;
-            //            PosesListView.selectedIndex = _previousIndex;
-            //        }
-            //        finally
-            //        {
-            //            PosesListView.onSelectionChanged += OnPoseListIndexChanged;
-            //        }
-
-
-            //        return;
-            //    }
-            //}
-
             if (PosesListView.selectedIndex >= Poser.PoseNames.Count)
             {
                 PosesListView.selectedIndex = Poser.PoseNames.Count - 1;
                 return;
             }
 
-            //if (SelectedBlendPose != null && string.IsNullOrWhiteSpace(SelectedBlendPose.AnimationParameter))
-            //{
-            //    //SelectedBlendPose.AnimationParameter = "None";
-            //}
+            if (SelectedBlendPose != null && string.IsNullOrWhiteSpace(SelectedBlendPose.AnimationParameter))
+            {
+                SelectedBlendPose.AnimationParameter = "None";
+            }
 
             SelectedIndex = PosesListView.selectedIndex;
             _previousIndex = CurrentPoseIndex;
 
             BindBlendContainer();
+        }
+
+        private void OnPoseListIndexChanged(List<object> p)
+        {
+            OnPoseSelectionChanged(p);
         }
 
         private void BindItem(VisualElement visual, int index)

@@ -315,6 +315,8 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
         public bool CanActivate { get; private set; }
 
+        public bool CanRelease { get; set; } = true;
+
         #region Private
 
         private SphereCollider _overlapCollider;
@@ -827,10 +829,13 @@ namespace HurricaneVR.Framework.Core.Grabbers
         private HVRGrabControls _currentGrabControl;
         private HVRGrabControls _grabbableControl;
 
-        private bool UpdateHolding()
+        protected virtual bool UpdateHolding()
         {
             if (!IsGrabbing)
                 return false;
+
+            if (!CanRelease)
+                return true;
 
             var grabTrigger = GrabTrigger;
 
@@ -1873,8 +1878,8 @@ namespace HurricaneVR.Framework.Core.Grabbers
             }
             else if (IsPhysicsPose)
             {
-                if (InverseKinematics)
-                    return GrabPoint.localPosition;
+                //if (InverseKinematics)
+                //    return GrabPoint.localPosition;
                 positionOffset = PhysicsHandPosition;
                 rotationOffset = PhysicsHandRotation;
             }
@@ -1886,7 +1891,16 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
             _fakeHand.localPosition = HandModelPosition;
             _fakeHand.localRotation = HandModelRotation;
-            _fakeHandAnchor.position = JointAnchorWorldPosition;
+
+            if (IsPhysicsPose)
+            {
+                _fakeHandAnchor.position = Palm.position;
+            }
+            else
+            {
+                _fakeHandAnchor.position = JointAnchorWorldPosition;
+            }
+
             _fakeHand.parent = GrabPoint;
             _fakeHand.localPosition = positionOffset;
             _fakeHand.localRotation = rotationOffset;
@@ -1902,11 +1916,6 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
         private Vector3 GetHandAnchor()
         {
-            //if (IsPhysicsPose && InverseKinematics)
-            //{
-            //    return Palm.localPosition;
-            //}    
-
             if (IsLineGrab)
             {
                 return Quaternion.Inverse(PosableGrabPoint.GetPoseRotationOffset(HandSide) * Quaternion.Inverse(HandModelRotation)) * -PosableGrabPoint.GetPosePositionOffset(HandSide) + HandModelPosition;
@@ -1914,7 +1923,14 @@ namespace HurricaneVR.Framework.Core.Grabbers
 
             if (PosableGrabPoint && PosableGrabPoint.IsJointAnchor)
             {
-                return Quaternion.Inverse(PosableGrabPoint.GetPoseRotationOffset(HandSide) * Quaternion.Inverse(HandModelRotation)) * -PosableGrabPoint.GetPosePositionOffset(HandSide);
+                var p = Quaternion.Inverse(PosableGrabPoint.GetPoseRotationOffset(HandSide)) * -PosableGrabPoint.GetPosePositionOffset(HandSide);
+                p = transform.InverseTransformPoint(HandModel.TransformPoint(p));
+                return p;
+            }
+
+            if (IsPhysicsPose)
+            {
+                return Rigidbody.transform.InverseTransformPoint(Palm.position);
             }
 
             return JointAnchor.localPosition;
@@ -2564,9 +2580,6 @@ namespace HurricaneVR.Framework.Core.Grabbers
                 TempGrabPoint.transform.localRotation = Quaternion.identity;
                 GrabPoint = TempGrabPoint.transform;
 
-                var pos = HandModel.position;
-                var rot = HandModel.rotation;
-
                 HandModel.position += -Palm.forward * .3f;
 
                 var delta = GrabPoint.position - PhysicsPoser.Palm.position;
@@ -2579,13 +2592,10 @@ namespace HurricaneVR.Framework.Core.Grabbers
                 PhysicsPoser.OpenFingers();
                 PhysicsPoser.SimulateClose(layerMask);
                 _physicsPose = PhysicsPoser.Hand.CreateHandPose();
+                
                 PhysicsPoseBytes = _physicsPose.Serialize();
-                //PhysicsPoser.Hand.Pose();
                 PhysicsHandRotation = Quaternion.Inverse(GrabPoint.rotation) * HandModel.rotation;
                 PhysicsHandPosition = GrabPoint.transform.InverseTransformPoint(HandModel.position);
-
-                //HandModel.position = pos;
-                //HandModel.rotation = rot;
 
                 PhysicsGrab(GrabbedTarget);
             }

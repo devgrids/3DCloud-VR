@@ -23,9 +23,22 @@ namespace HurricaneVR.Framework.Shared.HandPoser
 
         #endregion
 
+        public bool IsLeft;
+
+        [Header("Mirroring")]
         public MirrorAxis MirrorAxis = MirrorAxis.X;
 
-        public bool IsLeft;
+        [Header("Hand orientation adjustments if necessary for VRIK mirroring")]
+        public bool UseMatchRotation;
+
+        public HVRAxis Forward = HVRAxis.Y;
+        public HVRAxis Up = HVRAxis.Z;
+
+        public HVRAxis OtherForward = HVRAxis.Y;
+        public HVRAxis OtherUp = HVRAxis.Z;
+
+
+        [Header("Bone Information")]
 
         public Transform ThumbRoot;
         public Transform ThumbTip;
@@ -256,7 +269,7 @@ namespace HurricaneVR.Framework.Shared.HandPoser
                 return;
 
             Undo.SetCurrentGroupName("AddFingerCapsules");
-            
+
             for (var i = 0; i < finger.Bones.Count; i++)
             {
                 var bone = finger.Bones[i];
@@ -427,6 +440,11 @@ namespace HurricaneVR.Framework.Shared.HandPoser
             var upMirror = Vector3.Reflect(up, direction);
             clone.Rotation = Quaternion.LookRotation(mirror, upMirror);
 
+            if (UseMatchRotation)
+            {
+                clone.Rotation = MatchRotation(clone.Rotation, Forward.GetVector(), Up.GetVector(), OtherForward.GetVector(), OtherUp.GetVector());
+            }
+
             HVRJointMirrorSetting thumbOverride = null;
             HVRJointMirrorSetting indexMirror = null;
             HVRJointMirrorSetting middleMirror = null;
@@ -469,6 +487,15 @@ namespace HurricaneVR.Framework.Shared.HandPoser
             }
 
             return clone;
+        }
+
+        public static Quaternion MatchRotation(Quaternion targetRotation, Vector3 targetforwardAxis, Vector3 targetUpAxis, Vector3 forwardAxis, Vector3 upAxis)
+        {
+            Quaternion f = Quaternion.LookRotation(forwardAxis, upAxis);
+            Quaternion fTarget = Quaternion.LookRotation(targetforwardAxis, targetUpAxis);
+
+            Quaternion d = targetRotation * fTarget;
+            return d * Quaternion.Inverse(f);
         }
 
         private HVRPosableFingerData MirrorFinger(HVRPosableFinger finger, HVRJointMirrorSetting mirrorOverride, List<HVRJointMirrorSetting> settings)

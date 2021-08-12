@@ -1,0 +1,294 @@
+fileFormatVersion: 2
+guid: b7df3d79f68cd1a4d9757e1001e4c0e0
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      43: 4300000
+    second: CROCODILE
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - 333878a640014b74d83e39e69a33d5c0
+  - 278e795de0a99be4aac34bd2ad5b96a5
+  - c3cb25bebd7ad5e48810bc3ffc07aa7e
+  - 1bf04321729937147b22a2ba1ef3093c
+  - de9c366e2ef8e3344bc773a80dd74d9f
+  - 84bf0be1436c580499d55662fe515674
+  - 82c2f460da6821a4d8d3a5bb0bc7cef1
+  - e68aeabc877ebe940bff398285479305
+  - 4765de90d933f7d49bd3020b6108fe3d
+  - 78f744833b9bf6a48818c09b7d4eae46
+  - bd47cde4bf04a3f45a7d6172ced1194a
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: CROCODILE(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0.00000059444585, z: 0.00000059444585, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CROCODILE
+      parentName: CROCODILE(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CROCODILE_
+      parentName: CROCODILE(Clone)
+      position: {x: -0, y: 0.5277177, z: -0.33253834}
+      rotation: {x: 8.4845444e-17, y: -8.4845444e-17, z: 0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CROCODILE_ Pelvis
+      parentName: CROCODILE_
+      position: {x: -0.5274465, y: 0.0000009536743, z: 1.1625443}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+    - name: CROCODILE_ Spine
+      parentName: CROCODILE_ Pelvis
+      position: {x: -0.34088537, y: 0.024461975, z: 0.0000004061275}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000002}
+    - name: CROCODILE_ L Thigh
+      parentName: CROCODILE_ Spine
+      position: {x: 0.34090468, y: -0.024191359, z: 0.30436897}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 0.99999994, y: 0.9999997, z: 1.0000001}
+    - name: CROCODILE_ L Calf
+      parentName: CROCODILE_ L Thigh
+      position: {x: -0.31377295, y: 0.000000038146972, z: -0.000000038146972}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 0.99999994}
+    - name: CROCODILE_ L Foot
+      parentName: CROCODILE_ L Calf
+      position: {x: -0.396828, y: 0.000000076293944, z: 0.000000038146972}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000001}
+    - name: CROCODILE_ L Toe0
+      parentName: CROCODILE_ L Foot
+      position: {x: -0.09521065, y: 0.1667197, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000002, y: 1, z: 1.0000002}
+    - name: CROCODILE_ Spine1
+      parentName: CROCODILE_ Spine
+      position: {x: -0.5856911, y: -0.00046638487, z: -0.0000000012935197}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CROCODILE_ Neck
+      parentName: CROCODILE_ Spine1
+      position: {x: -0.58566207, y: -0.0367094, z: -0.00000005395268}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
+    - name: CROCODILE_ L Clavicle
+      parentName: CROCODILE_ Neck
+      position: {x: -0.000029067993, y: 0.036709175, z: 0.09128882}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1, y: 0.9999997, z: 0.99999994}
+    - name: CROCODILE_ L UpperArm
+      parentName: CROCODILE_ L Clavicle
+      position: {x: -0.19886409, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: CROCODILE_ L Forearm
+      parentName: CROCODILE_ L UpperArm
+      position: {x: -0.2990815, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: CROCODILE_ L Hand
+      parentName: CROCODILE_ L Forearm
+      position: {x: -0.38797894, y: 0.000000019073486, z: 0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 1, y: 1.0000004, z: 0.99999994}
+    - name: CROCODILE_ L Finger0
+      parentName: CROCODILE_ L Hand
+      position: {x: -0.15028954, y: 0.0058470154, z: 0.013976059}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1.0000002}
+    - name: CROCODILE_ R Clavicle
+      parentName: CROCODILE_ Neck
+      position: {x: -0.000029067993, y: 0.03670967, z: -0.09128871}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1.0000001, y: 0.9999997, z: 1.0000001}
+    - name: CROCODILE_ R UpperArm
+      parentName: CROCODILE_ R Clavicle
+      position: {x: -0.19886409, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1, z: 1.0000004}
+    - name: CROCODILE_ R Forearm
+      parentName: CROCODILE_ R UpperArm
+      position: {x: -0.29908147, y: 0, z: 0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1.0000005}
+    - name: CROCODILE_ R Hand
+      parentName: CROCODILE_ R Forearm
+      position: {x: -0.38797894, y: 0, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000001}
+    - name: CROCODILE_ R Finger0
+      parentName: CROCODILE_ R Hand
+      position: {x: -0.15028961, y: 0.0058470536, z: -0.013975983}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000004}
+    - name: CROCODILE_ Neck1
+      parentName: CROCODILE_ Neck
+      position: {x: -0.26108763, y: -0.00020786285, z: -5.7669236e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 1.0000002}
+    - name: CROCODILE_ Head
+      parentName: CROCODILE_ Neck1
+      position: {x: -0.26104414, y: -0.05511772, z: -0.000000080598475}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999996, y: 0.9999984, z: 0.99999934}
+    - name: CROCODILE_ Queue de cheval 1
+      parentName: CROCODILE_ Head
+      position: {x: -0.054795224, y: 0.1842046, z: 0.000000190313}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000002}
+    - name: CROCODILE_ R Thigh
+      parentName: CROCODILE_ Spine
+      position: {x: 0.34090468, y: -0.02418972, z: -0.30436903}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000002}
+    - name: CROCODILE_ R Calf
+      parentName: CROCODILE_ R Thigh
+      position: {x: -0.31377304, y: 0.000000038146972, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: CROCODILE_ R Foot
+      parentName: CROCODILE_ R Calf
+      position: {x: -0.39682797, y: 0.000000038146972, z: 0.000000038146972}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000004}
+    - name: CROCODILE_ R Toe0
+      parentName: CROCODILE_ R Foot
+      position: {x: -0.09521065, y: 0.16671965, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000004, y: 1, z: 1}
+    - name: CROCODILE_ Tail
+      parentName: CROCODILE_ Spine
+      position: {x: 0.5863084, y: 0.0051769638, z: 0.0000007830875}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: CROCODILE_ Tail1
+      parentName: CROCODILE_ Tail
+      position: {x: -0.43281972, y: -0.00035381317, z: -9.813811e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: CROCODILE_ Tail2
+      parentName: CROCODILE_ Tail1
+      position: {x: -0.44448966, y: -0.00035449982, z: -9.831274e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.9999998, z: 1.0000002}
+    - name: CROCODILE_ Tail3
+      parentName: CROCODILE_ Tail2
+      position: {x: -0.44527525, y: -0.00035800933, z: -9.927317e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: CROCODILE_ Tail4
+      parentName: CROCODILE_ Tail3
+      position: {x: -0.44958618, y: -0.00034633637, z: -9.604264e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1, z: 1.0000004}
+    - name: CROCODILE_ Tail5
+      parentName: CROCODILE_ Tail4
+      position: {x: -0.43499663, y: -0.0003287506, z: -9.1153196e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: CROCODILE_ Tail6
+      parentName: CROCODILE_ Tail5
+      position: {x: -0.41286924, y: -0.00039012908, z: -0.0000000010823714}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1.0000002}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.01
+    rootMotionBoneName: 
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
