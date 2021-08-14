@@ -2,17 +2,26 @@
 using UnityEngine;
 using Photon.Pun;
 
+
 namespace Player
 {
+    [RequireComponent(typeof(PhotonView))]
     public class PlayerNetwork : MonoBehaviour
     {
         [SerializeField] private PlayerController playerController;
-        
+
+
         private PhotonView _photonView;
 
         private void Awake()
         {
             _photonView = GetComponent<PhotonView>();
+
+        }
+
+        private void Start()
+        {
+
         }
 
         void Update()
@@ -26,6 +35,8 @@ namespace Player
                 playerController.Disabled();
             }
         }
-        
+
+       
+
     }
 }

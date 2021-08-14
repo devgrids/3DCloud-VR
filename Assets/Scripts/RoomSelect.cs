@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RoomSelect : MonoBehaviourPunCallbacks
@@ -28,12 +29,14 @@ public class RoomSelect : MonoBehaviourPunCallbacks
         LobbyManager.playerCountContenedor = playerCount;
         LobbyManager.indexImagenContenedor = indexImagen;
 
-        LobbyManager.sharedInstance.CreateRoom();
+        //LobbyManager.sharedInstance.CreateRoom();
 
         Debug.Log("ROOM NAME: " + roomName);
         Debug.Log("ROOM SIZE: " + roomSize);
         Debug.Log("PLAYER COUNT: " + playerCount);
         Debug.Log("INDEX IMAGEN: " + indexImagen);
+
+        SceneManager.LoadScene(indexImagen + 1);
     }
 
     // Se llama por el controlador de lobbys para cada nueva sala que se añade a la lista

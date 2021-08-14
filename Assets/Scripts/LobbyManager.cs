@@ -42,52 +42,52 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     #region Photon Callback Methods
 
     // Si la conexión fue establecida
-    public override void OnConnectedToMaster()
-    {
-        // Esto indica que todos los jugadores de la sala usarán la misma el jugador master (el que crea la sala) o Master Client
-        PhotonNetwork.AutomaticallySyncScene = true;
-        roomLista = new List<RoomInfo>();
-        Debug.Log("Conectando master");
-    }
+    //public override void OnConnectedToMaster()
+    //{
+    //    // Esto indica que todos los jugadores de la sala usarán la misma el jugador master (el que crea la sala) o Master Client
+    //    PhotonNetwork.AutomaticallySyncScene = true;
+    //    roomLista = new List<RoomInfo>();
+    //    Debug.Log("Conectando master");
+    //}
 
-    public override void OnCreatedRoom()
-    {
-        Debug.Log("Curso creado correctamente");
-    }
-    // Si no se puede unir a la sala al azar
-    public override void OnJoinRandomFailed(short returnCode, string message)
-    {
-        Debug.Log("Error en Join Random Falider");
-       
-    }
+    //public override void OnCreatedRoom()
+    //{
+    //    Debug.Log("Curso creado correctamente");
+    //}
+    //// Si no se puede unir a la sala al azar
+    //public override void OnJoinRandomFailed(short returnCode, string message)
+    //{
+    //    Debug.Log("Error en Join Random Falider");
 
-    public override void OnJoinRoomFailed(short returnCode, string message)
-    {
-        Debug.Log("Error en unirse a ROOM");
-    }
+    //}
 
-    public override void OnJoinedLobby()
-    {
-        Debug.Log("Lobby conectado");
-    }
+    //public override void OnJoinRoomFailed(short returnCode, string message)
+    //{
+    //    Debug.Log("Error en unirse a ROOM");
+    //}
 
-    public override void OnCreateRoomFailed(short returnCode, string message) //si la sala existe
-    {
-        Debug.Log("Fallo en crear una nueva sala, seguramente ya existe una sala con ese nombre.");
-        CreateRoom();
-    }
+    //public override void OnJoinedLobby()
+    //{
+    //    Debug.Log("Lobby conectado");
+    //}
 
-    public override void OnJoinedRoom()
-    {
-        if (PhotonNetwork.IsConnected)
-        {
-            Debug.Log("Te uniste a la Sala: " + PhotonNetwork.CurrentRoom.Name);
-            Debug.Log("La sala cuenta con: " + PhotonNetwork.CurrentRoom.PlayerCount + " jugador(es).");
-            Debug.Log("INDEX: " + (indexImagenContenedor + 1));
-            PhotonNetwork.LoadLevel((indexImagenContenedor + 1));
-            Debug.Log("Escena creada");
-        }
-    }
+    //public override void OnCreateRoomFailed(short returnCode, string message) //si la sala existe
+    //{
+    //    Debug.Log("Fallo en crear una nueva sala, seguramente ya existe una sala con ese nombre.");
+    //    CreateRoom();
+    //}
+
+    //public override void OnJoinedRoom()
+    //{
+    //    if (PhotonNetwork.IsConnected)
+    //    {
+    //        Debug.Log("Te uniste a la Sala: " + PhotonNetwork.CurrentRoom.Name);
+    //        Debug.Log("La sala cuenta con: " + PhotonNetwork.CurrentRoom.PlayerCount + " jugador(es).");
+    //        Debug.Log("INDEX: " + (indexImagenContenedor + 1));
+    //        PhotonNetwork.LoadLevel((indexImagenContenedor + 1));
+    //        Debug.Log("Escena creada");
+    //    }
+    //}
 
     #endregion
 
@@ -96,27 +96,29 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // Predicate, es un método C# que contiene un set de criterios de búsqueda y devuelve un boolean
     // Está definido en el System namespace 
     // Método que buscan una sala en la lista de salas
-    static System.Predicate<RoomInfo> ByName(string name)
-    {
-        return delegate (RoomInfo room)
-        {
-            return room.Name == name;
-        };
-    }
 
-    public void CreateRoom()
-    {
-        Debug.Log("Creando nueva sala: " + roomNameContenedor);
-        RoomOptions roomOptions = new RoomOptions()
-        {
-            IsVisible = true,
-            IsOpen = true,
-            MaxPlayers = (byte)roomSizeContenedor
-        };
 
-        PhotonNetwork.JoinOrCreateRoom(roomNameContenedor, roomOptions, TypedLobby.Default); // Creación de una nueva sala
+    //static System.Predicate<RoomInfo> ByName(string name)
+    //{
+    //    return delegate (RoomInfo room)
+    //    {
+    //        return room.Name == name;
+    //    };
+    //}
 
-    }
+    //public void CreateRoom()
+    //{
+    //    Debug.Log("Creando nueva sala: " + roomNameContenedor);
+    //    RoomOptions roomOptions = new RoomOptions()
+    //    {
+    //        IsVisible = true,
+    //        IsOpen = true,
+    //        MaxPlayers = (byte)roomSizeContenedor
+    //    };
+
+    //    PhotonNetwork.JoinOrCreateRoom(roomNameContenedor, roomOptions, TypedLobby.Default); // Creación de una nueva sala
+
+    //}
 
     void BorrarSalasdeLista()
     {

@@ -3,6 +3,7 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BNG;
 
 public class HomeManager : MonoBehaviourPunCallbacks
 {
@@ -18,14 +19,9 @@ public class HomeManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        if (PhotonNetwork.IsConnected)
-        {
-            if (genericPlayer != null)
-            {
-                // Instanciar al jugador para todos los jugadores en la sala en una posición al azar al inicio de la escena
-                PhotonNetwork.Instantiate(genericPlayer.name, spawnPlayer, Quaternion.identity);
-            }
-        }
+        
+
+        
 
         //if (!PhotonNetwork.IsMasterClient)
         //{
@@ -40,6 +36,22 @@ public class HomeManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+       
+            if (genericPlayer != null)
+            {
+                // Instanciar al jugador para todos los jugadores en la sala en una posición al azar al inicio de la escena
+                //PhotonNetwork.Instantiate(genericPlayer.name, spawnPlayer, Quaternion.identity);
+
+                GameObject player = PhotonNetwork.Instantiate(genericPlayer.name, spawnPlayer, Quaternion.identity, 0);
+                BNG.NetworkPlayer np = player.GetComponent<BNG.NetworkPlayer>();
+                if (np)
+                {
+                    Debug.Log("Instanciando DEL PUN VRIF :V VVVV");
+                    np.transform.name = "MyRemotePlayer";
+                    np.AssignPlayerObjects();
+                }
+
+            }
         
     }
 

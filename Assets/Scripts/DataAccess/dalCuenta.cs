@@ -55,7 +55,8 @@ public class dalCuenta : MonoBehaviour
 
     public void obtenerCuenta()
     {
-        StartCoroutine(IE_obtenerCuenta(inputUser.text, inputPassword.text));
+        StartCoroutine(IE_obtenerCuenta("yordy.lmv.2000@gmail.com", "code"));
+        //StartCoroutine(IE_obtenerCuenta(inputUser.text, inputPassword.text));
     }
 
     #endregion
