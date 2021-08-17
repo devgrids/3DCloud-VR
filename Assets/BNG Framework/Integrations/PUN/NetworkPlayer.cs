@@ -11,6 +11,7 @@ namespace BNG {
         public Transform PlayerHeadTransform;
         public Transform PlayerLeftHandTransform;
         public Transform PlayerRightHandTransform;
+        public Transform PlayerBodyHandTransform;
 
         [Tooltip("Transform of the remote player's head. This will be updated during Update")]
         public Transform RemoteHeadTransform;
@@ -38,6 +39,15 @@ namespace BNG {
         private Vector3 _syncRHandEndPosition = Vector3.zero;
         private Quaternion _syncRHandStartRotation = Quaternion.identity;
         private Quaternion _syncRHandEndRotation = Quaternion.identity;
+
+        [Tooltip("Transform of the remote player's body. This will be updated during Update")]
+        public Transform RemoteBodyHandTransform;
+
+        // Store positions to move between updates
+        private Vector3 _syncBodyStartPosition = Vector3.zero;
+        private Vector3 _syncBodyEndPosition = Vector3.zero;
+        private Quaternion _syncBodyStartRotation = Quaternion.identity;
+        private Quaternion _syncBodyEndRotation = Quaternion.identity;
 
         // Send Hand Animation info to others
         public HandController LeftHandController;
@@ -118,6 +128,7 @@ namespace BNG {
                 updateRemotePositionRotation(RemoteHeadTransform, _syncHeadStartPosition, _syncHeadEndPosition, _syncHeadStartRotation, _syncHeadEndRotation, synchValue);
                 updateRemotePositionRotation(RemoteLeftHandTransform, _syncLHandStartPosition, _syncLHandEndPosition, _syncLHandStartRotation, _syncLHandEndRotation, synchValue);
                 updateRemotePositionRotation(RemoteRightHandTransform, _syncRHandStartPosition, _syncRHandEndPosition, _syncRHandStartRotation, _syncRHandEndRotation, synchValue);
+                updateRemotePositionRotation(RemoteBodyHandTransform, _syncBodyStartPosition, _syncBodyEndPosition, _syncBodyStartRotation, _syncBodyEndRotation, synchValue);
 
                 // Update animation info
                 if (RemoteLeftHandAnimator) {
@@ -172,10 +183,8 @@ namespace BNG {
         }
 
         public void AssignPlayerObjects() {
+
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            Debug.Log("Nombes de instancia PUN: " + player.name);
-
             PlayerHeadTransform = getChildTransformByName(player.transform, "CenterEyeAnchor");
 
             // Using an explicit Transform name to make sure we grab the right one in the scene
@@ -184,6 +193,8 @@ namespace BNG {
            
             PlayerRightHandTransform = GameObject.Find("ModelsRight").transform;
             RightHandController = PlayerRightHandTransform.parent.GetComponentInChildren<HandController>();
+
+            PlayerBodyHandTransform = player.transform;
         }
 
         Transform getChildTransformByName(Transform search, string name) {
@@ -202,6 +213,7 @@ namespace BNG {
             RemoteHeadTransform.gameObject.SetActive(enableObjects);
             RemoteLeftHandTransform.gameObject.SetActive(enableObjects);
             RemoteRightHandTransform.gameObject.SetActive(enableObjects);
+            RemoteBodyHandTransform.gameObject.SetActive(enableObjects);
             disabledObjects = !enableObjects;
         }
         
@@ -285,6 +297,8 @@ namespace BNG {
                 stream.SendNext(PlayerLeftHandTransform.rotation);
                 stream.SendNext(PlayerRightHandTransform.position);
                 stream.SendNext(PlayerRightHandTransform.rotation);
+                stream.SendNext(PlayerBodyHandTransform.position);
+                stream.SendNext(PlayerBodyHandTransform.rotation);
 
                 // Hand Animator Info
                 if(LeftHandController) {
@@ -322,8 +336,14 @@ namespace BNG {
                 this._syncRHandStartRotation = RemoteRightHandTransform.rotation;
                 this._syncRHandEndRotation = (Quaternion)stream.ReceiveNext();
 
+                // Body
+                this._syncBodyStartPosition = RemoteBodyHandTransform.position;
+                this._syncBodyEndPosition = (Vector3)stream.ReceiveNext();
+                this._syncBodyStartRotation = RemoteBodyHandTransform.rotation;
+                this._syncBodyEndRotation = (Quaternion)stream.ReceiveNext();
+
                 // Left Hand Animation Updates
-                if(RemoteLeftHandAnimator) {
+                if (RemoteLeftHandAnimator) {
                     _syncLeftGripEnd = (float)stream.ReceiveNext();
                     _syncLeftPointEnd = (float)stream.ReceiveNext();
                     _syncLeftThumbEnd = (float)stream.ReceiveNext();
